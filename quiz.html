@@ -1137,4 +1137,1143 @@
     </script>
 
 </body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz | Sociopedia</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGold: '#F4B243',
+                        brandBlue: '#4260F5',
+                        brandCyan: '#42D1F5',
+                        brandTaupe: '#756B5A',
+                        brandSlate: '#5A5F75',
+                        darkBg: '#121622',
+                        cardBg: '#1C2234'
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.5s ease-out forwards'
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(15px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-darkBg text-slate-100 font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header class="bg-darkBg/90 backdrop-blur-md border-b border-brandTaupe/30 sticky top-0 z-50">
+
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+
+            <a href="index.html" class="flex items-center space-x-3 group">
+
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-users text-2xl text-brandBlue"></i>
+                </div>
+
+                <span class="font-black text-xl tracking-tight text-white group-hover:text-brandCyan transition-colors">
+                    Socio<span class="text-brandGold">pedia</span>
+                </span>
+
+            </a>
+
+            <nav class="hidden lg:flex items-center space-x-1 bg-cardBg/80 p-1.5 rounded-2xl border border-brandSlate/30 text-xs font-semibold">
+
+                <a href="index.html" class="px-3.5 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Inicio
+                </a>
+
+                <a href="modulo1.html" class="px-3.5 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Módulo 1
+                </a>
+
+                <a href="modulo2.html" class="px-3.5 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Módulo 2
+                </a>
+
+                <a href="modulo3.html" class="px-3.5 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Módulo 3
+                </a>
+
+                <a href="modulo4.html" class="px-3.5 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Módulo 4
+                </a>
+
+                <a href="modulo5.html" class="px-3.5 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Módulo 5
+                </a>
+
+                <a href="quiz.html" class="px-4 py-2 rounded-xl bg-brandGold text-darkBg font-bold shadow-md">
+                    Quiz
+                </a>
+
+            </nav>
+
+            <button id="mobile-btn" class="lg:hidden text-slate-300 text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+
+        <!-- MENÚ MÓVIL -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-cardBg border-b border-brandTaupe/30 px-6 py-4 space-y-2 text-sm">
+
+            <a href="index.html" class="block text-slate-300">
+                Inicio
+            </a>
+
+            <a href="modulo1.html" class="block text-slate-300">
+                Módulo 1: Ciencia
+            </a>
+
+            <a href="modulo2.html" class="block text-slate-300">
+                Módulo 2: Sociología
+            </a>
+
+            <a href="modulo3.html" class="block text-slate-300">
+                Módulo 3: Historia
+            </a>
+
+            <a href="modulo4.html" class="block text-slate-300">
+                Módulo 4: Precursores
+            </a>
+
+            <a href="modulo5.html" class="block text-slate-300">
+                Módulo 5: Corrientes
+            </a>
+
+            <a href="quiz.html" class="block text-brandGold font-bold">
+                Quiz Evaluativo
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="container mx-auto px-6 py-12 max-w-3xl animate-fade-in-up">
+
+
+        <!-- ENCABEZADO -->
+        <div class="mb-8 text-center">
+
+            <span class="text-xs font-extrabold uppercase tracking-widest text-brandGold bg-brandGold/10 px-3 py-1 rounded-full border border-brandGold/30">
+                Evaluación
+            </span>
+
+            <h1 class="text-3xl font-black text-white mt-3">
+                Quiz Evaluativo
+            </h1>
+
+            <p class="text-slate-400 text-sm mt-2">
+                Comprueba lo aprendido a través de los cinco módulos.
+            </p>
+
+            <div class="mt-4 flex justify-center items-center gap-2 text-xs text-slate-500">
+                <i class="fa-solid fa-circle-question text-brandCyan"></i>
+                <span>10 preguntas · Una respuesta por pregunta</span>
+            </div>
+
+        </div>
+
+
+        <!-- FORMULARIO -->
+        <form id="quiz-form" class="space-y-5">
+
+
+            <!-- PREGUNTA 1 -->
+            <div id="pregunta-1" class="pregunta bg-cardBg border border-brandSlate/40 p-6 rounded-3xl shadow-xl transition-all duration-300">
+
+                <p class="font-bold text-white text-sm mb-4">
+                    1. ¿Qué autor acuñó el término "Sociología" e impulsó el Positivismo?
+                </p>
+
+                <div class="space-y-2 text-sm text-slate-300">
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q1" value="a" class="mr-2 accent-brandCyan">
+                        Karl Marx
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q1" value="b" class="mr-2 accent-brandCyan">
+                        Auguste Comte
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q1" value="c" class="mr-2 accent-brandCyan">
+                        Max Weber
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q1" value="d" class="mr-2 accent-brandCyan">
+                        Émile Durkheim
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- PREGUNTA 2 -->
+            <div id="pregunta-2" class="pregunta bg-cardBg border border-brandSlate/40 p-6 rounded-3xl shadow-xl transition-all duration-300">
+
+                <p class="font-bold text-white text-sm mb-4">
+                    2. ¿Qué teoría enfatiza las relaciones económicas y la lucha de clases?
+                </p>
+
+                <div class="space-y-2 text-sm text-slate-300">
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q2" value="a" class="mr-2 accent-brandCyan">
+                        Materialismo Histórico
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q2" value="b" class="mr-2 accent-brandCyan">
+                        Positivismo
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q2" value="c" class="mr-2 accent-brandCyan">
+                        Interaccionismo Simbólico
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q2" value="d" class="mr-2 accent-brandCyan">
+                        Estructural Funcionalismo
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- PREGUNTA 3 -->
+            <div id="pregunta-3" class="pregunta bg-cardBg border border-brandSlate/40 p-6 rounded-3xl shadow-xl transition-all duration-300">
+
+                <p class="font-bold text-white text-sm mb-4">
+                    3. ¿Cuál de los siguientes se considera un hecho social según Émile Durkheim?
+                </p>
+
+                <div class="space-y-2 text-sm text-slate-300">
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q3" value="a" class="mr-2 accent-brandCyan">
+                        Una decisión completamente individual sin influencia social
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q3" value="b" class="mr-2 accent-brandCyan">
+                        Una forma de actuar, pensar o sentir externa al individuo
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q3" value="c" class="mr-2 accent-brandCyan">
+                        Una opinión personal
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q3" value="d" class="mr-2 accent-brandCyan">
+                        Una característica biológica
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- PREGUNTA 4 -->
+            <div id="pregunta-4" class="pregunta bg-cardBg border border-brandSlate/40 p-6 rounded-3xl shadow-xl transition-all duration-300">
+
+                <p class="font-bold text-white text-sm mb-4">
+                    4. ¿Qué acontecimiento histórico transformó profundamente la producción, el trabajo y el crecimiento urbano?
+                </p>
+
+                <div class="space-y-2 text-sm text-slate-300">
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q4" value="a" class="mr-2 accent-brandCyan">
+                        La Revolución Industrial
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q4" value="b" class="mr-2 accent-brandCyan">
+                        La Revolución Francesa
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q4" value="c" class="mr-2 accent-brandCyan">
+                        La Ilustración
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q4" value="d" class="mr-2 accent-brandCyan">
+                        La Guerra Fría
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- PREGUNTA 5 -->
+            <div id="pregunta-5" class="pregunta bg-cardBg border border-brandSlate/40 p-6 rounded-3xl shadow-xl transition-all duration-300">
+
+                <p class="font-bold text-white text-sm mb-4">
+                    5. ¿Qué pensador desarrolló el concepto de acción social?
+                </p>
+
+                <div class="space-y-2 text-sm text-slate-300">
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q5" value="a" class="mr-2 accent-brandCyan">
+                        Max Weber
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q5" value="b" class="mr-2 accent-brandCyan">
+                        Herbert Spencer
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q5" value="c" class="mr-2 accent-brandCyan">
+                        Saint-Simon
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q5" value="d" class="mr-2 accent-brandCyan">
+                        Pierre Bourdieu
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- PREGUNTA 6 -->
+            <div id="pregunta-6" class="pregunta bg-cardBg border border-brandSlate/40 p-6 rounded-3xl shadow-xl transition-all duration-300">
+
+                <p class="font-bold text-white text-sm mb-4">
+                    6. ¿Qué corriente estudia las instituciones sociales según la función que cumplen dentro de la sociedad?
+                </p>
+
+                <div class="space-y-2 text-sm text-slate-300">
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q6" value="a" class="mr-2 accent-brandCyan">
+                        Teoría Crítica
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q6" value="b" class="mr-2 accent-brandCyan">
+                        Estructural Funcionalismo
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q6" value="c" class="mr-2 accent-brandCyan">
+                        Materialismo Histórico
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q6" value="d" class="mr-2 accent-brandCyan">
+                        Interaccionismo Simbólico
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- PREGUNTA 7 -->
+            <div id="pregunta-7" class="pregunta bg-cardBg border border-brandSlate/40 p-6 rounded-3xl shadow-xl transition-all duration-300">
+
+                <p class="font-bold text-white text-sm mb-4">
+                    7. ¿Qué concepto desarrolló Pierre Bourdieu para explicar disposiciones adquiridas que orientan las prácticas sociales?
+                </p>
+
+                <div class="space-y-2 text-sm text-slate-300">
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q7" value="a" class="mr-2 accent-brandCyan">
+                        Acción social
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q7" value="b" class="mr-2 accent-brandCyan">
+                        Habitus
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q7" value="c" class="mr-2 accent-brandCyan">
+                        Hecho social
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q7" value="d" class="mr-2 accent-brandCyan">
+                        Solidaridad orgánica
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- PREGUNTA 8 -->
+            <div id="pregunta-8" class="pregunta bg-cardBg border border-brandSlate/40 p-6 rounded-3xl shadow-xl transition-all duration-300">
+
+                <p class="font-bold text-white text-sm mb-4">
+                    8. ¿Qué corriente analiza la construcción de significados mediante la interacción entre las personas?
+                </p>
+
+                <div class="space-y-2 text-sm text-slate-300">
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q8" value="a" class="mr-2 accent-brandCyan">
+                        Interaccionismo Simbólico
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q8" value="b" class="mr-2 accent-brandCyan">
+                        Positivismo Sociológico
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q8" value="c" class="mr-2 accent-brandCyan">
+                        Teoría del Conflicto
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q8" value="d" class="mr-2 accent-brandCyan">
+                        Estructural Funcionalismo
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- PREGUNTA 9 -->
+            <div id="pregunta-9" class="pregunta bg-cardBg border border-brandSlate/40 p-6 rounded-3xl shadow-xl transition-all duration-300">
+
+                <p class="font-bold text-white text-sm mb-4">
+                    9. ¿Qué acontecimiento promovió el uso de la razón, el pensamiento crítico y la confianza en la ciencia?
+                </p>
+
+                <div class="space-y-2 text-sm text-slate-300">
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q9" value="a" class="mr-2 accent-brandCyan">
+                        La Revolución Industrial
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q9" value="b" class="mr-2 accent-brandCyan">
+                        La Ilustración
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q9" value="c" class="mr-2 accent-brandCyan">
+                        La Revolución Francesa
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q9" value="d" class="mr-2 accent-brandCyan">
+                        La Revolución Digital
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- PREGUNTA 10 -->
+            <div id="pregunta-10" class="pregunta bg-cardBg border border-brandSlate/40 p-6 rounded-3xl shadow-xl transition-all duration-300">
+
+                <p class="font-bold text-white text-sm mb-4">
+                    10. ¿Qué teoría busca comprender la relación entre las estructuras sociales y las acciones de las personas?
+                </p>
+
+                <div class="space-y-2 text-sm text-slate-300">
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q10" value="a" class="mr-2 accent-brandCyan">
+                        Teoría de la estructuración
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q10" value="b" class="mr-2 accent-brandCyan">
+                        Materialismo Histórico
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q10" value="c" class="mr-2 accent-brandCyan">
+                        Positivismo Sociológico
+                    </label>
+
+                    <label class="opcion block p-4 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q10" value="d" class="mr-2 accent-brandCyan">
+                        Teoría Crítica
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTÓN -->
+            <button
+                id="boton-enviar"
+                type="button"
+                onclick="evaluateQuiz()"
+                class="w-full bg-gradient-to-r from-brandBlue to-brandCyan text-white font-bold py-4 rounded-xl text-sm shadow-lg hover:opacity-90 transition-all">
+
+                <i class="fa-solid fa-check mr-2"></i>
+                Enviar Respuestas
+
+            </button>
+
+        </form>
+
+
+        <!-- RESULTADO -->
+        <div id="quiz-result" class="hidden mt-8"></div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-cardBg/60 border-t border-brandTaupe/30 py-6 text-center text-xs text-slate-400">
+
+        <p>
+            &copy; Sociopedia — Plataforma Educativa Interactiva.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        // TODO: respuestas correctas
+        const respuestasCorrectas = {
+            q1: 'b',
+            q2: 'a',
+            q3: 'b',
+            q4: 'a',
+            q5: 'a',
+            q6: 'b',
+            q7: 'b',
+            q8: 'a',
+            q9: 'b',
+            q10: 'a'
+        };
+
+
+        // TODO: nombres de las respuestas
+        const nombresRespuestas = {
+
+            q1: {
+                a: 'Karl Marx',
+                b: 'Auguste Comte',
+                c: 'Max Weber',
+                d: 'Émile Durkheim'
+            },
+
+            q2: {
+                a: 'Materialismo Histórico',
+                b: 'Positivismo',
+                c: 'Interaccionismo Simbólico',
+                d: 'Estructural Funcionalismo'
+            },
+
+            q3: {
+                a: 'Una decisión completamente individual sin influencia social',
+                b: 'Una forma de actuar, pensar o sentir externa al individuo',
+                c: 'Una opinión personal',
+                d: 'Una característica biológica'
+            },
+
+            q4: {
+                a: 'La Revolución Industrial',
+                b: 'La Revolución Francesa',
+                c: 'La Ilustración',
+                d: 'La Guerra Fría'
+            },
+
+            q5: {
+                a: 'Max Weber',
+                b: 'Herbert Spencer',
+                c: 'Saint-Simon',
+                d: 'Pierre Bourdieu'
+            },
+
+            q6: {
+                a: 'Teoría Crítica',
+                b: 'Estructural Funcionalismo',
+                c: 'Materialismo Histórico',
+                d: 'Interaccionismo Simbólico'
+            },
+
+            q7: {
+                a: 'Acción social',
+                b: 'Habitus',
+                c: 'Hecho social',
+                d: 'Solidaridad orgánica'
+            },
+
+            q8: {
+                a: 'Interaccionismo Simbólico',
+                b: 'Positivismo Sociológico',
+                c: 'Teoría del Conflicto',
+                d: 'Estructural Funcionalismo'
+            },
+
+            q9: {
+                a: 'La Revolución Industrial',
+                b: 'La Ilustración',
+                c: 'La Revolución Francesa',
+                d: 'La Revolución Digital'
+            },
+
+            q10: {
+                a: 'Teoría de la estructuración',
+                b: 'Materialismo Histórico',
+                c: 'Positivismo Sociológico',
+                d: 'Teoría Crítica'
+            }
+
+        };
+
+
+        // TODO: guardar respuestas seleccionadas
+        function guardarRespuestas() {
+
+            const respuestasGuardadas = {};
+
+            for (let i = 1; i <= 10; i++) {
+
+                const seleccionada = document.querySelector(
+                    `input[name="q${i}"]:checked`
+                );
+
+                if (seleccionada) {
+                    respuestasGuardadas[`q${i}`] = seleccionada.value;
+                }
+
+            }
+
+            localStorage.setItem(
+                'sociopedia_respuestas_quiz',
+                JSON.stringify(respuestasGuardadas)
+            );
+
+        }
+
+
+        // TODO: recuperar respuestas guardadas
+        function cargarRespuestas() {
+
+            const guardadas = localStorage.getItem(
+                'sociopedia_respuestas_quiz'
+            );
+
+            if (!guardadas) {
+                return;
+            }
+
+            const respuestas = JSON.parse(guardadas);
+
+            Object.keys(respuestas).forEach(pregunta => {
+
+                const opcion = document.querySelector(
+                    `input[name="${pregunta}"][value="${respuestas[pregunta]}"]`
+                );
+
+                if (opcion) {
+                    opcion.checked = true;
+                }
+
+            });
+
+        }
+
+
+        // TODO: bloquear respuestas
+        function bloquearQuiz() {
+
+            const form = document.getElementById('quiz-form');
+
+            form.querySelectorAll('input[type="radio"]').forEach(input => {
+                input.disabled = true;
+            });
+
+            const boton = document.getElementById('boton-enviar');
+
+            boton.disabled = true;
+
+            boton.innerHTML = `
+                <i class="fa-solid fa-lock mr-2"></i>
+                Quiz finalizado
+            `;
+
+            boton.classList.remove('hover:opacity-90');
+            boton.classList.add(
+                'opacity-60',
+                'cursor-not-allowed'
+            );
+
+        }
+
+
+        // TODO: mostrar resultado
+        function evaluateQuiz() {
+
+            const boton = document.getElementById('boton-enviar');
+
+            // TODO: evitar enviar nuevamente
+            if (boton.disabled) {
+                return;
+            }
+
+            guardarRespuestas();
+
+            let respuestasRespondidas = 0;
+            let score = 0;
+
+
+            for (let i = 1; i <= 10; i++) {
+
+                const seleccionada = document.querySelector(
+                    `input[name="q${i}"]:checked`
+                );
+
+                if (seleccionada) {
+                    respuestasRespondidas++;
+                }
+
+            }
+
+
+            // TODO: comprobar que todas estén respondidas
+            if (respuestasRespondidas < 10) {
+
+                alert(
+                    `Faltan ${10 - respuestasRespondidas} pregunta(s) por responder.`
+                );
+
+                return;
+            }
+
+
+            // TODO: calcular puntuación
+            for (let i = 1; i <= 10; i++) {
+
+                const respuesta = document.querySelector(
+                    `input[name="q${i}"]:checked`
+                );
+
+                if (
+                    respuesta.value ===
+                    respuestasCorrectas[`q${i}`]
+                ) {
+                    score++;
+                }
+
+            }
+
+
+            mostrarResultado(score);
+
+        }
+
+
+        // TODO: cambiar color de las preguntas
+        function colorearPreguntas() {
+
+            for (let i = 1; i <= 10; i++) {
+
+                const pregunta = document.getElementById(
+                    `pregunta-${i}`
+                );
+
+                const respuesta = document.querySelector(
+                    `input[name="q${i}"]:checked`
+                );
+
+                const correcta =
+                    respuestasCorrectas[`q${i}`];
+
+
+                pregunta.classList.remove(
+                    'bg-cardBg',
+                    'border-brandSlate/40',
+                    'bg-green-900/30',
+                    'border-green-500',
+                    'bg-red-900/30',
+                    'border-red-500'
+                );
+
+
+                if (respuesta.value === correcta) {
+
+                    pregunta.classList.add(
+                        'bg-green-900/30',
+                        'border-green-500'
+                    );
+
+                } else {
+
+                    pregunta.classList.add(
+                        'bg-red-900/30',
+                        'border-red-500'
+                    );
+
+                }
+
+            }
+
+        }
+
+
+        // TODO: mostrar respuestas correctas
+        function mostrarResultado(score) {
+
+            bloquearQuiz();
+
+            colorearPreguntas();
+
+
+            const result =
+                document.getElementById('quiz-result');
+
+
+            let mensaje = '';
+
+
+            if (score === 10) {
+
+                mensaje = `
+                    <div class="bg-green-900/30 border border-green-500 rounded-2xl p-5 text-center mb-6">
+
+                        <i class="fa-solid fa-trophy text-green-400 text-3xl mb-3"></i>
+
+                        <h2 class="text-xl font-black text-white">
+                            ¡Puntuación Perfecta!
+                        </h2>
+
+                        <p class="text-green-400 font-bold mt-1">
+                            ${score}/10 respuestas correctas
+                        </p>
+
+                    </div>
+                `;
+
+            } else if (score >= 7) {
+
+                mensaje = `
+                    <div class="bg-green-900/30 border border-green-500 rounded-2xl p-5 text-center mb-6">
+
+                        <i class="fa-solid fa-circle-check text-green-400 text-3xl mb-3"></i>
+
+                        <h2 class="text-xl font-black text-white">
+                            ¡Muy buen resultado!
+                        </h2>
+
+                        <p class="text-green-400 font-bold mt-1">
+                            ${score}/10 respuestas correctas
+                        </p>
+
+                    </div>
+                `;
+
+            } else {
+
+                mensaje = `
+                    <div class="bg-red-900/30 border border-red-500 rounded-2xl p-5 text-center mb-6">
+
+                        <i class="fa-solid fa-book-open text-red-300 text-3xl mb-3"></i>
+
+                        <h2 class="text-xl font-black text-white">
+                            Puedes seguir repasando
+                        </h2>
+
+                        <p class="text-red-300 font-bold mt-1">
+                            ${score}/10 respuestas correctas
+                        </p>
+
+                    </div>
+                `;
+
+            }
+
+
+            let detalle = `
+                <div class="bg-cardBg border border-brandSlate/40 rounded-3xl p-5 sm:p-7 shadow-xl">
+
+                    <div class="flex items-center gap-3 mb-6">
+
+                        <i class="fa-solid fa-list-check text-brandCyan"></i>
+
+                        <h2 class="font-black text-white">
+                            Revisión de respuestas
+                        </h2>
+
+                    </div>
+            `;
+
+
+            for (let i = 1; i <= 10; i++) {
+
+                const respuestaUsuario =
+                    document.querySelector(
+                        `input[name="q${i}"]:checked`
+                    ).value;
+
+                const respuestaCorrecta =
+                    respuestasCorrectas[`q${i}`];
+
+                const esCorrecta =
+                    respuestaUsuario === respuestaCorrecta;
+
+
+                detalle += `
+
+                    <div class="border-t border-brandSlate/30 pt-5 mt-5">
+
+                        <div class="flex items-start gap-3">
+
+                            <div class="mt-0.5">
+
+                                ${
+                                    esCorrecta
+
+                                    ? `<i class="fa-solid fa-circle-check text-green-400"></i>`
+
+                                    : `<i class="fa-solid fa-circle-xmark text-red-400"></i>`
+                                }
+
+                            </div>
+
+
+                            <div class="flex-1">
+
+                                <p class="text-sm font-bold text-white">
+                                    Pregunta ${i}
+                                </p>
+
+
+                                <p class="text-xs text-slate-400 mt-2">
+
+                                    Tu respuesta:
+
+                                    <span class="${
+                                        esCorrecta
+                                        ? 'text-green-400'
+                                        : 'text-red-300'
+                                    } font-semibold">
+
+                                        ${nombresRespuestas[`q${i}`][respuestaUsuario]}
+
+                                    </span>
+
+                                </p>
+
+
+                                <p class="text-xs text-slate-400 mt-1">
+
+                                    Respuesta correcta:
+
+                                    <span class="text-brandGold font-semibold">
+
+                                        ${nombresRespuestas[`q${i}`][respuestaCorrecta]}
+
+                                    </span>
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            }
+
+
+            detalle += `
+
+                </div>
+
+
+                <button
+                    type="button"
+                    onclick="reiniciarQuiz()"
+                    class="w-full mt-5 border border-brandSlate/50 text-slate-300 font-bold py-3 rounded-xl text-xs hover:bg-brandSlate/20 transition-all">
+
+                    <i class="fa-solid fa-rotate-right mr-2"></i>
+
+                    Intentar nuevamente
+
+                </button>
+
+            `;
+
+
+            result.innerHTML =
+                mensaje + detalle;
+
+
+            result.classList.remove('hidden');
+
+
+            result.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+
+        }
+
+
+        // TODO: reiniciar quiz
+        function reiniciarQuiz() {
+
+            localStorage.removeItem(
+                'sociopedia_respuestas_quiz'
+            );
+
+
+            const form =
+                document.getElementById('quiz-form');
+
+
+            form.reset();
+
+
+            // TODO: restaurar colores
+            document.querySelectorAll('.pregunta').forEach(pregunta => {
+
+                pregunta.classList.remove(
+                    'bg-green-900/30',
+                    'border-green-500',
+                    'bg-red-900/30',
+                    'border-red-500'
+                );
+
+                pregunta.classList.add(
+                    'bg-cardBg',
+                    'border-brandSlate/40'
+                );
+
+            });
+
+
+            // TODO: desbloquear respuestas
+            form.querySelectorAll(
+                'input[type="radio"]'
+            ).forEach(input => {
+
+                input.disabled = false;
+
+            });
+
+
+            // TODO: restaurar botón
+            const boton =
+                document.getElementById('boton-enviar');
+
+
+            boton.disabled = false;
+
+
+            boton.innerHTML = `
+                <i class="fa-solid fa-check mr-2"></i>
+                Enviar Respuestas
+            `;
+
+
+            boton.classList.remove(
+                'opacity-60',
+                'cursor-not-allowed'
+            );
+
+
+            boton.classList.add(
+                'hover:opacity-90'
+            );
+
+
+            document
+                .getElementById('quiz-result')
+                .classList.add('hidden');
+
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+        }
+
+
+        // TODO: guardar cada respuesta inmediatamente
+        document.querySelectorAll(
+            '#quiz-form input[type="radio"]'
+        ).forEach(input => {
+
+            input.addEventListener(
+                'change',
+                guardarRespuestas
+            );
+
+        });
+
+
+        // TODO: menú móvil
+        document.getElementById(
+            'mobile-btn'
+        )?.addEventListener(
+            'click',
+            () => {
+
+                document
+                    .getElementById('mobile-menu')
+                    .classList.toggle('hidden');
+
+            }
+        );
+
+
+        // TODO: cargar respuestas al abrir la página
+        cargarRespuestas();
+
+    </script>
+
+</body>
 </html>
