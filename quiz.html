@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz | Sociopedia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                brandGold: '#F4B243', brandBlue: '#4260F5', brandCyan: '#42D1F5',
+                brandTaupe: '#756B5A', brandSlate: '#5A5F75', darkBg: '#121622', cardBg: '#1C2234'
+              },
+              animation: { 'fade-in-up': 'fadeInUp 0.5s ease-out forwards' },
+              keyframes: { fadeInUp: { '0%': { opacity: '0', transform: 'translateY(15px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } } }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-darkBg text-slate-100 font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- MENÚ DE NAVEGACIÓN FIJO SIEMPRE VISIBLE -->
+    <header class="bg-darkBg/90 backdrop-blur-md border-b border-brandTaupe/30 sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold group-hover:scale-105 transition-transform">
+                <i class="fa-solid fa-users text-2xl text-brandBlue"></i>
+                </div>
+
+                <span class="font-black text-xl tracking-tight text-white group-hover:text-brandCyan transition-colors">
+                    Socio<span class="text-brandGold">pedia</span>
+                </span>
+            </a>
+            
+            <nav class="hidden lg:flex items-center space-x-1 bg-cardBg/80 p-1.5 rounded-2xl border border-brandSlate/30 text-xs font-semibold">
+                <a href="index.html" class="px-3.5 py-2 rounded-xl text-slate-300 hover:text-white">Inicio</a>
+                <a href="modulo1.html" class="px-3.5 py-2 rounded-xl text-slate-300 hover:text-white">Módulo 1</a>
+                <a href="modulo2.html" class="px-3.5 py-2 rounded-xl text-slate-300 hover:text-white">Módulo 2</a>
+                <a href="modulo3.html" class="px-3.5 py-2 rounded-xl text-slate-300 hover:text-white">Módulo 3</a>
+                <a href="modulo4.html" class="px-3.5 py-2 rounded-xl text-slate-300 hover:text-white">Módulo 4</a>
+                <a href="modulo5.html" class="px-3.5 py-2 rounded-xl text-slate-300 hover:text-white">Módulo 5</a>
+                <a href="quiz.html" class="px-4 py-2 rounded-xl bg-brandGold text-darkBg font-bold shadow-md">Quiz</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 max-w-2xl animate-fade-in-up">
+        <div class="mb-8 text-center">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-brandGold bg-brandGold/10 px-3 py-1 rounded-full border border-brandGold/30">Evaluación</span>
+            <h1 class="text-3xl font-black text-white mt-3">Quiz Evaluativo</h1>
+            <p class="text-slate-400 text-sm mt-1">Comprueba lo aprendido en la lección.</p>
+        </div>
+
+        <form id="quiz-form" class="bg-cardBg border border-brandSlate/40 p-6 sm:p-8 rounded-3xl space-y-6 shadow-xl">
+            <div>
+                <p class="font-bold text-white text-xs mb-3">1. ¿Qué autor acuñó el término "Sociología" e impulsó el Positivismo?</p>
+                <div class="space-y-2 text-xs text-slate-300">
+                    <label class="block p-3.5 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q1" value="a" class="mr-2 accent-brandCyan"> Karl Marx
+                    </label>
+                    <label class="block p-3.5 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q1" value="b" class="mr-2 accent-brandCyan"> Auguste Comte
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <p class="font-bold text-white text-xs mb-3">2. ¿Qué teoría enfatiza las relaciones económicas y la lucha de clases?</p>
+                <div class="space-y-2 text-xs text-slate-300">
+                    <label class="block p-3.5 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q2" value="a" class="mr-2 accent-brandCyan"> Materialismo Histórico
+                    </label>
+                    <label class="block p-3.5 rounded-xl bg-darkBg border border-brandSlate/30 cursor-pointer hover:border-brandCyan transition-colors">
+                        <input type="radio" name="q2" value="b" class="mr-2 accent-brandCyan"> Positivismo
+                    </label>
+                </div>
+            </div>
+
+            <button type="button" onclick="evaluateQuiz()" class="w-full bg-gradient-to-r from-brandBlue to-brandCyan text-white font-bold py-3.5 rounded-xl text-xs shadow-lg hover:opacity-90 transition-all">
+                Enviar Respuestas
+            </button>
+        </form>
+
+        <div id="quiz-result" class="hidden mt-6 text-center p-4 rounded-xl text-xs font-bold border transition-all"></div>
+    </main>
+
+    <footer class="bg-cardBg/60 border-t border-brandTaupe/30 py-6 text-center text-xs text-slate-400">
+        <p>&copy; Sociopedia — Plataforma Educativa Interactiva.</p>
+    </footer>
+
+    <script>
+        function evaluateQuiz() {
+            const form = document.getElementById('quiz-form');
+            const q1 = form.q1.value;
+            const q2 = form.q2.value;
+            const result = document.getElementById('quiz-result');
+
+            if (!q1 || !q2) {
+                alert('Por favor, responde todas las preguntas.');
+                return;
+            }
+
+            let score = 0;
+            if (q1 === 'b') score++;
+            if (q2 === 'a') score++;
+
+            result.classList.remove('hidden', 'bg-brandBlue/20', 'border-brandCyan', 'text-brandCyan', 'bg-red-900/30', 'border-red-500', 'text-red-300');
+
+            if (score === 2) {
+                result.classList.add('bg-brandBlue/20', 'border-brandCyan', 'text-brandCyan');
+                result.innerHTML = '<i class="fa-solid fa-circle-check text-base mr-2"></i> ¡Puntuación Perfecta: 2/2!';
+            } else {
+                result.classList.add('bg-red-900/30', 'border-red-500', 'text-red-300');
+                result.innerHTML = `Puntuación: ${score}/2. Te sugerimos repasar los módulos.`;
+            }
+        }
+    </script>
+</body>
+</html>

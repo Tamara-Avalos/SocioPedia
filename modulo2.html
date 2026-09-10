@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 | Conceptualización de la Sociología</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGold: '#F4B243',
+                        brandBlue: '#4260F5',
+                        brandCyan: '#42D1F5',
+                        brandTaupe: '#756B5A',
+                        brandSlate: '#5A5F75',
+                        darkBg: '#121622',
+                        cardBg: '#1C2234'
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards'
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-darkBg text-slate-100 font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- MENÚ DE NAVEGACIÓN FIJO SIEMPRE VISIBLE -->
+    <header class="bg-darkBg/90 backdrop-blur-md border-b border-brandTaupe/30 sticky top-0 z-50 transition-all duration-300">
+
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+
+            <a href="index.html" class="flex items-center space-x-3 group">
+
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-users text-2xl text-brandBlue"></i>
+                </div>
+
+                <span class="font-black text-xl tracking-tight text-white group-hover:text-brandCyan transition-colors">
+                    Socio<span class="text-brandGold">pedia</span>
+                </span>
+
+            </a>
+
+            <nav class="hidden lg:flex items-center space-x-1 bg-cardBg/80 p-1.5 rounded-2xl border border-brandSlate/30">
+
+                <a href="index.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Inicio
+                </a>
+
+                <a href="modulo1.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Módulo 1
+                </a>
+
+                <a href="modulo2.html"
+                   class="px-4 py-2 rounded-xl text-xs font-bold bg-brandBlue text-white shadow-md">
+                    Módulo 2
+                </a>
+
+                <a href="modulo3.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Módulo 3
+                </a>
+
+                <a href="modulo4.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Módulo 4
+                </a>
+
+                <a href="modulo5.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Módulo 5
+                </a>
+
+                <a href="quiz.html"
+                   class="px-4 py-2 rounded-xl text-xs font-bold text-brandGold border border-brandGold/40 hover:bg-brandGold hover:text-darkBg transition-all">
+                    Quiz
+                </a>
+
+            </nav>
+
+            <button id="mobile-btn" class="lg:hidden text-slate-300 text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+        <div id="mobile-menu"
+             class="hidden lg:hidden bg-cardBg border-b border-brandTaupe/30 px-6 py-4 space-y-2 text-sm">
+
+            <a href="index.html" class="block text-slate-300">
+                Inicio
+            </a>
+
+            <a href="modulo1.html" class="block text-slate-300">
+                Módulo 1: Ciencia
+            </a>
+
+            <a href="modulo2.html" class="block text-brandCyan font-bold">
+                Módulo 2: Sociología
+            </a>
+
+            <a href="modulo3.html" class="block text-slate-300">
+                Módulo 3: Historia
+            </a>
+
+            <a href="modulo4.html" class="block text-slate-300">
+                Módulo 4: Precursores
+            </a>
+
+            <a href="modulo5.html" class="block text-slate-300">
+                Módulo 5: Corrientes
+            </a>
+
+            <a href="quiz.html" class="block text-brandGold">
+                Quiz Evaluativo
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="container mx-auto px-6 py-12 max-w-5xl animate-fade-in-up">
+
+        <!-- ENCABEZADO -->
+        <div class="mb-12 text-center sm:text-left">
+
+            <span class="text-xs font-extrabold uppercase tracking-widest text-brandCyan bg-brandCyan/10 px-3.5 py-1.5 rounded-full border border-brandCyan/30">
+                Módulo 2
+            </span>
+
+            <h1 class="text-3xl sm:text-5xl font-black text-white mt-3">
+                Conceptualización de la Sociología
+            </h1>
+
+            <p class="text-slate-300 text-sm sm:text-base mt-3 max-w-3xl leading-relaxed">
+                Comprende qué es la Sociología, qué estudia, cómo analiza la vida social
+                y cómo se relaciona con otras disciplinas de las Ciencias Sociales.
+            </p>
+
+        </div>
+
+
+        <!-- DEFINICIÓN -->
+        <section class="mb-12">
+
+            <div class="bg-cardBg border border-brandSlate/40 p-6 sm:p-8 rounded-3xl">
+
+                <div class="flex items-center gap-3 mb-5">
+
+                    <div class="w-12 h-12 rounded-xl bg-brandBlue/20 text-brandCyan flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-white">
+                        ¿Qué es la Sociología?
+                    </h2>
+
+                </div>
+
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                    La Sociología es la ciencia social que estudia de manera sistemática
+                    la vida social, las relaciones entre las personas, los grupos y las
+                    sociedades. Analiza cómo se organizan las sociedades, cómo se
+                    establecen las relaciones sociales y cómo estas cambian o se mantienen
+                    a través del tiempo.
+                </p>
+
+                <div class="mt-6 grid sm:grid-cols-3 gap-4">
+
+                    <div class="bg-darkBg border border-brandSlate/30 p-4 rounded-xl">
+                        <i class="fa-solid fa-people-group text-brandCyan text-xl mb-3"></i>
+                        <h3 class="font-bold text-white text-sm mb-1">
+                            Vida social
+                        </h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Estudia cómo las personas conviven, interactúan y forman grupos.
+                        </p>
+                    </div>
+
+                    <div class="bg-darkBg border border-brandSlate/30 p-4 rounded-xl">
+                        <i class="fa-solid fa-building-columns text-brandCyan text-xl mb-3"></i>
+                        <h3 class="font-bold text-white text-sm mb-1">
+                            Estructuras sociales
+                        </h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Analiza instituciones, normas, relaciones y formas de organización.
+                        </p>
+                    </div>
+
+                    <div class="bg-darkBg border border-brandSlate/30 p-4 rounded-xl">
+                        <i class="fa-solid fa-arrows-rotate text-brandCyan text-xl mb-3"></i>
+                        <h3 class="font-bold text-white text-sm mb-1">
+                            Cambio social
+                        </h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Examina los procesos mediante los cuales las sociedades cambian o conservan sus formas de organización.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ¿QUÉ ESTUDIA? -->
+        <section class="mb-12">
+
+            <h2 class="text-2xl font-bold text-brandGold mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                ¿Qué estudia la Sociología?
+            </h2>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+
+                <div class="bg-cardBg border border-brandSlate/40 p-6 rounded-2xl hover:border-brandCyan transition-all">
+
+                    <div class="w-10 h-10 rounded-lg bg-brandBlue/20 text-brandCyan flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <h3 class="font-bold text-white mb-2">
+                        Sociedad y estructuras
+                    </h3>
+
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Estudia la organización de la sociedad, sus estructuras,
+                        instituciones y las relaciones que se establecen entre sus miembros.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-cardBg border border-brandSlate/40 p-6 rounded-2xl hover:border-brandCyan transition-all">
+
+                    <div class="w-10 h-10 rounded-lg bg-brandBlue/20 text-brandCyan flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+
+                    <h3 class="font-bold text-white mb-2">
+                        Comportamiento social
+                    </h3>
+
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Analiza cómo las personas actúan e interactúan dentro de
+                        diferentes grupos y contextos sociales.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-cardBg border border-brandSlate/40 p-6 rounded-2xl hover:border-brandCyan transition-all">
+
+                    <div class="w-10 h-10 rounded-lg bg-brandBlue/20 text-brandCyan flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+
+                    <h3 class="font-bold text-white mb-2">
+                        Fenómenos colectivos
+                    </h3>
+
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Examina fenómenos como movimientos sociales, migración,
+                        estratificación, cultura, religión y problemas sociales.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-cardBg border border-brandSlate/40 p-6 rounded-2xl hover:border-brandCyan transition-all">
+
+                    <div class="w-10 h-10 rounded-lg bg-brandBlue/20 text-brandCyan flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
+
+                    <h3 class="font-bold text-white mb-2">
+                        Cambio y conservación
+                    </h3>
+
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Estudia los procesos sociales que producen transformaciones,
+                        así como aquellos que permiten conservar determinadas formas de organización.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- OBJETO DE ESTUDIO -->
+        <section class="mb-12">
+
+            <div class="bg-cardBg border border-brandSlate/40 p-6 sm:p-8 rounded-3xl">
+
+                <div class="flex items-center gap-3 mb-5">
+
+                    <div class="w-12 h-12 rounded-xl bg-brandBlue/20 text-brandCyan flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white">
+                            Objeto de estudio
+                        </h2>
+
+                        <p class="text-xs text-slate-400">
+                            El enfoque científico de la vida social
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                    La Sociología busca comprender los fenómenos que ocurren en la vida
+                    social mediante un análisis sistemático. Para Durkheim, uno de sus
+                    principales exponentes, el objeto de estudio de la Sociología son
+                    los <span class="text-brandCyan font-semibold">hechos sociales</span>.
+                </p>
+
+
+                <div class="bg-darkBg border border-brandCyan/30 rounded-2xl p-5">
+
+                    <h3 class="font-bold text-brandCyan mb-3">
+                        <i class="fa-solid fa-lightbulb mr-2"></i>
+                        ¿Qué son los hechos sociales?
+                    </h3>
+
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        Son formas de actuar, pensar y sentir que existen de manera
+                        externa al individuo y que pueden ejercer una influencia o
+                        presión sobre su comportamiento.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SOCIOLOGÍA COMO CIENCIA -->
+        <section class="mb-12">
+
+            <h2 class="text-2xl font-bold text-brandGold mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-flask"></i>
+                La Sociología como ciencia
+            </h2>
+
+
+            <div class="bg-cardBg border border-brandSlate/40 p-6 sm:p-8 rounded-3xl">
+
+                <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                    La Sociología utiliza procedimientos científicos para estudiar la
+                    realidad social. Su análisis busca que los fenómenos sociales sean
+                    estudiados de manera objetiva y sistemática, evitando basarse
+                    únicamente en opiniones o explicaciones del sentido común.
+                </p>
+
+
+                <div class="grid sm:grid-cols-3 gap-4">
+
+                    <div class="bg-darkBg border border-brandSlate/30 p-5 rounded-xl text-center">
+
+                        <i class="fa-solid fa-list-check text-brandCyan text-2xl mb-3"></i>
+
+                        <h3 class="font-bold text-white text-sm mb-2">
+                            Método
+                        </h3>
+
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Utiliza procedimientos ordenados para analizar los fenómenos sociales.
+                        </p>
+
+                    </div>
+
+
+                    <div class="bg-darkBg border border-brandSlate/30 p-5 rounded-xl text-center">
+
+                        <i class="fa-solid fa-eye text-brandCyan text-2xl mb-3"></i>
+
+                        <h3 class="font-bold text-white text-sm mb-2">
+                            Observación
+                        </h3>
+
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Parte del análisis de hechos y fenómenos presentes en la realidad social.
+                        </p>
+
+                    </div>
+
+
+                    <div class="bg-darkBg border border-brandSlate/30 p-5 rounded-xl text-center">
+
+                        <i class="fa-solid fa-scale-balanced text-brandCyan text-2xl mb-3"></i>
+
+                        <h3 class="font-bold text-white text-sm mb-2">
+                            Objetividad
+                        </h3>
+
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Busca analizar los fenómenos sociales de manera científica y fundamentada.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BOURDIEU Y GIDDENS -->
+        <section class="mb-12">
+
+            <h2 class="text-2xl font-bold text-brandGold mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-brain"></i>
+                Conceptos para comprender la sociedad
+            </h2>
+
+
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- BOURDIEU -->
+                <div class="bg-cardBg border border-brandSlate/40 p-6 rounded-2xl">
+
+                    <div class="flex items-center gap-3 mb-4">
+
+                        <div class="w-11 h-11 rounded-xl bg-brandBlue/20 text-brandCyan flex items-center justify-center">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+
+                        <h3 class="text-lg font-bold text-white">
+                            Pierre Bourdieu
+                        </h3>
+
+                    </div>
+
+                    <p class="text-xs text-slate-300 leading-relaxed mb-5">
+                        Bourdieu propone conceptos que permiten analizar cómo las
+                        personas se desenvuelven dentro de diferentes espacios sociales.
+                    </p>
+
+
+                    <div class="space-y-3">
+
+                        <div class="bg-darkBg p-3 rounded-lg border border-brandSlate/20">
+                            <span class="text-brandCyan font-bold text-xs">
+                                Habitus
+                            </span>
+
+                            <p class="text-xs text-slate-400 mt-1">
+                                Disposiciones incorporadas que influyen en la manera en que las personas perciben y actúan en el mundo social.
+                            </p>
+                        </div>
+
+
+                        <div class="bg-darkBg p-3 rounded-lg border border-brandSlate/20">
+                            <span class="text-brandCyan font-bold text-xs">
+                                Campos
+                            </span>
+
+                            <p class="text-xs text-slate-400 mt-1">
+                                Espacios sociales en los que existen relaciones, posiciones e intereses específicos.
+                            </p>
+                        </div>
+
+
+                        <div class="bg-darkBg p-3 rounded-lg border border-brandSlate/20">
+                            <span class="text-brandCyan font-bold text-xs">
+                                Capitales
+                            </span>
+
+                            <p class="text-xs text-slate-400 mt-1">
+                                Recursos económicos, culturales y sociales que pueden influir en las posiciones dentro de la sociedad.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GIDDENS -->
+                <div class="bg-cardBg border border-brandSlate/40 p-6 rounded-2xl">
+
+                    <div class="flex items-center gap-3 mb-4">
+
+                        <div class="w-11 h-11 rounded-xl bg-brandBlue/20 text-brandCyan flex items-center justify-center">
+                            <i class="fa-solid fa-arrows-left-right"></i>
+                        </div>
+
+                        <h3 class="text-lg font-bold text-white">
+                            Anthony Giddens
+                        </h3>
+
+                    </div>
+
+                    <p class="text-xs text-slate-300 leading-relaxed mb-5">
+                        Giddens analiza la relación entre las estructuras sociales y
+                        las acciones de las personas.
+                    </p>
+
+
+                    <div class="space-y-3">
+
+                        <div class="bg-darkBg p-3 rounded-lg border border-brandSlate/20">
+
+                            <span class="text-brandCyan font-bold text-xs">
+                                Estructura y agencia
+                            </span>
+
+                            <p class="text-xs text-slate-400 mt-1">
+                                Las estructuras condicionan las acciones, pero las personas también pueden reproducirlas o transformarlas mediante sus prácticas.
+                            </p>
+
+                        </div>
+
+
+                        <div class="bg-darkBg p-3 rounded-lg border border-brandSlate/20">
+
+                            <span class="text-brandCyan font-bold text-xs">
+                                Dualidad de estructura
+                            </span>
+
+                            <p class="text-xs text-slate-400 mt-1">
+                                Las estructuras son resultado y medio de las prácticas sociales de los individuos.
+                            </p>
+
+                        </div>
+
+
+                        <div class="bg-darkBg p-3 rounded-lg border border-brandSlate/20">
+
+                            <span class="text-brandCyan font-bold text-xs">
+                                Contexto y reflexividad
+                            </span>
+
+                            <p class="text-xs text-slate-400 mt-1">
+                                Las acciones sociales se desarrollan dentro de contextos determinados y las personas reflexionan sobre sus propias prácticas.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CAMPO DE ACCIÓN -->
+        <section class="mb-12">
+
+            <h2 class="text-2xl font-bold text-brandGold mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-briefcase"></i>
+                Campo de acción de la Sociología
+            </h2>
+
+
+            <div class="bg-cardBg border border-brandSlate/40 p-6 sm:p-8 rounded-3xl">
+
+                <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                    Los conocimientos sociológicos pueden aplicarse en diferentes
+                    ámbitos donde sea necesario comprender las relaciones, necesidades
+                    y dinámicas de una sociedad.
+                </p>
+
+
+                <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+
+                    <div class="p-4 rounded-xl bg-darkBg border border-brandSlate/30">
+                        <i class="fa-solid fa-microscope text-brandCyan mb-3"></i>
+
+                        <h3 class="font-bold text-white text-sm mb-1">
+                            Investigación
+                        </h3>
+
+                        <p class="text-xs text-slate-400">
+                            Estudio de fenómenos y problemas sociales.
+                        </p>
+                    </div>
+
+
+                    <div class="p-4 rounded-xl bg-darkBg border border-brandSlate/30">
+                        <i class="fa-solid fa-landmark text-brandCyan mb-3"></i>
+
+                        <h3 class="font-bold text-white text-sm mb-1">
+                            Políticas públicas
+                        </h3>
+
+                        <p class="text-xs text-slate-400">
+                            Análisis y diagnóstico de necesidades sociales.
+                        </p>
+                    </div>
+
+
+                    <div class="p-4 rounded-xl bg-darkBg border border-brandSlate/30">
+                        <i class="fa-solid fa-people-roof text-brandCyan mb-3"></i>
+
+                        <h3 class="font-bold text-white text-sm mb-1">
+                            Desarrollo comunitario
+                        </h3>
+
+                        <p class="text-xs text-slate-400">
+                            Comprensión y atención de dinámicas comunitarias.
+                        </p>
+                    </div>
+
+
+                    <div class="p-4 rounded-xl bg-darkBg border border-brandSlate/30">
+                        <i class="fa-solid fa-users-gear text-brandCyan mb-3"></i>
+
+                        <h3 class="font-bold text-white text-sm mb-1">
+                            Recursos humanos
+                        </h3>
+
+                        <p class="text-xs text-slate-400">
+                            Análisis de relaciones y dinámicas dentro de organizaciones.
+                        </p>
+                    </div>
+
+
+                    <div class="p-4 rounded-xl bg-darkBg border border-brandSlate/30">
+                        <i class="fa-solid fa-city text-brandCyan mb-3"></i>
+
+                        <h3 class="font-bold text-white text-sm mb-1">
+                            Estudios urbanos
+                        </h3>
+
+                        <p class="text-xs text-slate-400">
+                            Análisis de la vida social y organización de los espacios urbanos.
+                        </p>
+                    </div>
+
+
+                    <div class="p-4 rounded-xl bg-darkBg border border-brandSlate/30">
+                        <i class="fa-solid fa-comments text-brandCyan mb-3"></i>
+
+                        <h3 class="font-bold text-white text-sm mb-1">
+                            Consultoría social
+                        </h3>
+
+                        <p class="text-xs text-slate-400">
+                            Análisis de situaciones sociales para apoyar la toma de decisiones.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RELACIÓN CON OTRAS DISCIPLINAS -->
+        <section class="mb-12">
+
+            <div class="bg-cardBg border border-brandSlate/40 p-6 sm:p-8 rounded-3xl">
+
+                <h2 class="text-xl font-bold text-brandGold mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-network-wired"></i>
+                    Relación con otras disciplinas sociales
+                </h2>
+
+
+                <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+
+                    <div class="p-4 rounded-xl bg-darkBg border border-brandSlate/30">
+
+                        <h4 class="font-bold text-brandCyan text-sm mb-2">
+                            <i class="fa-solid fa-landmark mr-2"></i>
+                            Historia
+                        </h4>
+
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Proporciona el contexto temporal y los antecedentes de las estructuras sociales.
+                        </p>
+
+                    </div>
+
+
+                    <div class="p-4 rounded-xl bg-darkBg border border-brandSlate/30">
+
+                        <h4 class="font-bold text-brandCyan text-sm mb-2">
+                            <i class="fa-solid fa-coins mr-2"></i>
+                            Economía
+                        </h4>
+
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Analiza los sistemas de producción, distribución de riqueza y relaciones económicas.
+                        </p>
+
+                    </div>
+
+
+                    <div class="p-4 rounded-xl bg-darkBg border border-brandSlate/30">
+
+                        <h4 class="font-bold text-brandCyan text-sm mb-2">
+                            <i class="fa-solid fa-scale-balanced mr-2"></i>
+                            Ciencia Política
+                        </h4>
+
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Examina las estructuras del poder, la autoridad, la gobernabilidad y el Estado.
+                        </p>
+
+                    </div>
+
+
+                    <div class="p-4 rounded-xl bg-darkBg border border-brandSlate/30">
+
+                        <h4 class="font-bold text-brandCyan text-sm mb-2">
+                            <i class="fa-solid fa-people-arrows mr-2"></i>
+                            Antropología
+                        </h4>
+
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Aporta el estudio de la cultura, costumbres y formas de vida de las comunidades humanas.
+                        </p>
+
+                    </div>
+
+
+                    <div class="p-4 rounded-xl bg-darkBg border border-brandSlate/30">
+
+                        <h4 class="font-bold text-brandCyan text-sm mb-2">
+                            <i class="fa-solid fa-head-side-virus mr-2"></i>
+                            Psicología
+                        </h4>
+
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Permite relacionar los procesos individuales con las influencias del entorno social.
+                        </p>
+
+                    </div>
+
+
+                    <div class="p-4 rounded-xl bg-darkBg border border-brandSlate/30">
+
+                        <h4 class="font-bold text-brandCyan text-sm mb-2">
+                            <i class="fa-solid fa-globe-americas mr-2"></i>
+                            Geografía Humana
+                        </h4>
+
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Analiza la relación entre las sociedades humanas y los espacios donde se desarrollan.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTERACTIVO -->
+        <section class="mb-12">
+
+            <div class="bg-cardBg border border-brandCyan/30 p-6 sm:p-8 rounded-3xl">
+
+                <div class="text-center mb-7">
+
+                    <span class="text-xs font-bold uppercase tracking-widest text-brandCyan">
+                        Explora
+                    </span>
+
+                    <h2 class="text-2xl font-bold text-white mt-2">
+                        ¿Qué aspecto de la sociedad quieres analizar?
+                    </h2>
+
+                    <p class="text-xs text-slate-400 mt-2">
+                        Selecciona una opción para descubrir qué puede estudiar la Sociología.
+                    </p>
+
+                </div>
+
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+
+                    <button onclick="mostrarTema('sociedad')"
+                            class="tema-btn bg-darkBg border border-brandSlate/40 p-4 rounded-xl hover:border-brandCyan transition-all">
+
+                        <i class="fa-solid fa-people-group text-brandCyan text-xl mb-2"></i>
+
+                        <span class="block text-xs font-bold text-white">
+                            Sociedad
+                        </span>
+
+                    </button>
+
+
+                    <button onclick="mostrarTema('cambio')"
+                            class="tema-btn bg-darkBg border border-brandSlate/40 p-4 rounded-xl hover:border-brandCyan transition-all">
+
+                        <i class="fa-solid fa-arrows-rotate text-brandCyan text-xl mb-2"></i>
+
+                        <span class="block text-xs font-bold text-white">
+                            Cambio social
+                        </span>
+
+                    </button>
+
+
+                    <button onclick="mostrarTema('cultura')"
+                            class="tema-btn bg-darkBg border border-brandSlate/40 p-4 rounded-xl hover:border-brandCyan transition-all">
+
+                        <i class="fa-solid fa-palette text-brandCyan text-xl mb-2"></i>
+
+                        <span class="block text-xs font-bold text-white">
+                            Cultura
+                        </span>
+
+                    </button>
+
+
+                    <button onclick="mostrarTema('desigualdad')"
+                            class="tema-btn bg-darkBg border border-brandSlate/40 p-4 rounded-xl hover:border-brandCyan transition-all">
+
+                        <i class="fa-solid fa-chart-column text-brandCyan text-xl mb-2"></i>
+
+                        <span class="block text-xs font-bold text-white">
+                            Desigualdad
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <div id="info-tema"
+                     class="hidden mt-6 bg-darkBg border border-brandCyan/30 p-5 rounded-2xl">
+
+                    <h3 id="titulo-tema" class="font-bold text-brandCyan mb-2"></h3>
+
+                    <p id="texto-tema" class="text-xs sm:text-sm text-slate-300 leading-relaxed"></p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- IDEA CLAVE -->
+        <section>
+
+            <div class="border-l-4 border-brandGold bg-brandGold/5 rounded-r-2xl p-6">
+
+                <div class="flex items-center gap-3 mb-3">
+
+                    <i class="fa-solid fa-lightbulb text-brandGold text-lg"></i>
+
+                    <h2 class="font-bold text-white">
+
+                        Idea clave
+
+                    </h2>
+
+                </div>
+
+
+                <p class="text-sm text-slate-300 leading-relaxed">
+
+                    La Sociología permite comprender cómo se organiza la vida social,
+                    cómo las personas interactúan dentro de diferentes estructuras y
+                    cómo los procesos sociales pueden producir cambios o mantener
+                    determinadas formas de organización.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-cardBg/60 border-t border-brandTaupe/30 py-6 text-center text-xs text-slate-400">
+        <p>
+            &copy; Sociopedia — Plataforma Educativa Interactiva.
+        </p>
+    </footer>
+
+
+    <script>
+
+        // TODO: menú móvil
+        document.getElementById('mobile-btn')?.addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+
+        // TODO: mostrar información de los temas
+        function mostrarTema(tema) {
+
+            const datos = {
+
+                sociedad: {
+                    titulo: 'Sociedad y estructuras',
+                    texto: 'La Sociología estudia cómo se organizan las sociedades, cómo funcionan sus estructuras e instituciones y cómo se establecen relaciones entre las personas y los grupos.'
+                },
+
+                cambio: {
+                    titulo: 'Cambio social',
+                    texto: 'La Sociología analiza los procesos mediante los cuales las sociedades se transforman, así como los factores que permiten conservar determinadas formas de organización social.'
+                },
+
+                cultura: {
+                    titulo: 'Cultura',
+                    texto: 'La cultura forma parte de la vida social y comprende elementos que influyen en las formas en que las personas interpretan, comparten y reproducen maneras de actuar dentro de una sociedad.'
+                },
+
+                desigualdad: {
+                    titulo: 'Desigualdad y estratificación',
+                    texto: 'La Sociología estudia cómo se distribuyen de manera desigual los recursos, oportunidades y posiciones sociales, así como las relaciones que se desarrollan entre diferentes grupos.'
+                }
+
+            };
+
+
+            document.getElementById('titulo-tema').textContent = datos[tema].titulo;
+
+            document.getElementById('texto-tema').textContent = datos[tema].texto;
+
+            document.getElementById('info-tema').classList.remove('hidden');
+
+
+            document.querySelectorAll('.tema-btn').forEach(boton => {
+
+                boton.classList.remove(
+                    'bg-brandBlue/20',
+                    'border-brandCyan/50'
+                );
+
+                boton.classList.add(
+                    'bg-darkBg',
+                    'border-brandSlate/40'
+                );
+
+            });
+
+
+            event.currentTarget.classList.remove(
+                'bg-darkBg',
+                'border-brandSlate/40'
+            );
+
+            event.currentTarget.classList.add(
+                'bg-brandBlue/20',
+                'border-brandCyan/50'
+            );
+
+        }
+
+    </script>
+
+</body>
+</html>

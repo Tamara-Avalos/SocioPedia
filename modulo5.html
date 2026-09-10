@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 5 | Corrientes y Teorías</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGold: '#F4B243',
+                        brandBlue: '#4260F5',
+                        brandCyan: '#42D1F5',
+                        brandTaupe: '#756B5A',
+                        brandSlate: '#5A5F75',
+                        darkBg: '#121622',
+                        cardBg: '#1C2234'
+                    },
+
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards'
+                    },
+
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-darkBg text-slate-100 font-sans min-h-screen flex flex-col justify-between">
+
+
+    <!-- MENÚ DE NAVEGACIÓN FIJO SIEMPRE VISIBLE -->
+    <header class="bg-darkBg/90 backdrop-blur-md border-b border-brandTaupe/30 sticky top-0 z-50 transition-all duration-300">
+
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+
+            <a href="index.html" class="flex items-center space-x-3 group">
+
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-users text-2xl text-brandBlue"></i>
+                </div>
+
+                <span class="font-black text-xl tracking-tight text-white group-hover:text-brandCyan transition-colors">
+                    Socio<span class="text-brandGold">pedia</span>
+                </span>
+
+            </a>
+
+
+            <nav class="hidden lg:flex items-center space-x-1 bg-cardBg/80 p-1.5 rounded-2xl border border-brandSlate/30">
+
+                <a href="index.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Inicio
+                </a>
+
+                <a href="modulo1.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Módulo 1
+                </a>
+
+                <a href="modulo2.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Módulo 2
+                </a>
+
+                <a href="modulo3.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Módulo 3
+                </a>
+
+                <a href="modulo4.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Módulo 4
+                </a>
+
+                <a href="modulo5.html"
+                   class="px-4 py-2 rounded-xl text-xs font-bold bg-brandBlue text-white shadow-md">
+                    Módulo 5
+                </a>
+
+                <a href="quiz.html"
+                   class="px-4 py-2 rounded-xl text-xs font-bold text-brandGold border border-brandGold/40 hover:bg-brandGold hover:text-darkBg transition-all">
+                    Quiz
+                </a>
+
+            </nav>
+
+
+            <button id="mobile-btn"
+                    class="lg:hidden text-slate-300 text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+
+        <!-- MENÚ MÓVIL -->
+        <div id="mobile-menu"
+             class="hidden lg:hidden bg-cardBg border-b border-brandTaupe/30 px-6 py-4 space-y-2 text-sm">
+
+            <a href="index.html" class="block text-slate-300">
+                Inicio
+            </a>
+
+            <a href="modulo1.html" class="block text-slate-300">
+                Módulo 1: Ciencia
+            </a>
+
+            <a href="modulo2.html" class="block text-slate-300">
+                Módulo 2: Sociología
+            </a>
+
+            <a href="modulo3.html" class="block text-slate-300">
+                Módulo 3: Historia
+            </a>
+
+            <a href="modulo4.html" class="block text-slate-300">
+                Módulo 4: Precursores
+            </a>
+
+            <a href="modulo5.html" class="block text-brandCyan font-bold">
+                Módulo 5: Corrientes
+            </a>
+
+            <a href="quiz.html" class="block text-brandGold">
+                Quiz Evaluativo
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="container mx-auto px-6 py-12 max-w-4xl animate-fade-in-up">
+
+
+        <!-- ENCABEZADO -->
+        <section class="mb-10 text-center sm:text-left">
+
+            <span class="text-xs font-extrabold uppercase tracking-widest text-brandCyan bg-brandCyan/10 px-3.5 py-1.5 rounded-full border border-brandCyan/30">
+                Módulo 5 • Enfoques Teóricos
+            </span>
+
+            <h1 class="text-3xl sm:text-5xl font-black text-white mt-3">
+                Principales Corrientes Sociológicas
+            </h1>
+
+            <p class="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed max-w-3xl">
+                Las corrientes sociológicas son diferentes formas de interpretar
+                y explicar la sociedad. Cada enfoque pone atención en distintos
+                aspectos de la vida social, como el orden, el conflicto, las
+                relaciones económicas, la interacción y las formas de dominación.
+            </p>
+
+        </section>
+
+
+        <!-- EXPLORA -->
+        <section class="mb-10">
+
+            <div class="bg-cardBg border border-brandCyan/30 rounded-3xl p-6 sm:p-8">
+
+                <div class="text-center mb-6">
+
+                    <span class="text-xs font-bold uppercase tracking-widest text-brandCyan">
+                        Explora
+                    </span>
+
+                    <h2 class="text-2xl font-bold text-white mt-2">
+                        Diferentes formas de analizar la sociedad
+                    </h2>
+
+                    <p class="text-xs text-slate-400 mt-2">
+                        Selecciona cada corriente para conocer sus principales características.
+                    </p>
+
+                </div>
+
+
+                <!-- LISTA DE CORRIENTES -->
+                <div class="space-y-4">
+
+
+                    <!-- POSITIVISMO -->
+                    <article class="bg-cardBg border border-brandSlate/40 rounded-2xl overflow-hidden transition-all duration-300 hover:border-brandCyan">
+
+                        <button
+                            onclick="toggleAccordion('acc1', this)"
+                            class="accordion-btn w-full p-5 text-left font-bold text-white flex justify-between items-center hover:bg-brandSlate/20 transition-colors">
+
+                            <span class="text-sm flex items-center gap-3">
+                                <i class="fa-solid fa-microscope text-brandCyan"></i>
+                                Positivismo Sociológico
+                            </span>
+
+                            <i class="accordion-arrow fa-solid fa-chevron-down text-brandCyan text-xs transition-transform duration-300"></i>
+
+                        </button>
+
+
+                        <div id="acc1"
+                             class="accordion-content hidden p-5 border-t border-brandSlate/30 bg-darkBg/80">
+
+                            <div class="space-y-5">
+
+                                <div>
+                                    <h3 class="text-sm font-bold text-white mb-2">
+                                        ¿Qué plantea?
+                                    </h3>
+
+                                    <p class="text-xs text-slate-300 leading-relaxed">
+                                        Propone estudiar la sociedad mediante procedimientos
+                                        científicos, tomando como referencia la observación
+                                        y el análisis sistemático de los fenómenos sociales.
+                                    </p>
+                                </div>
+
+
+                                <div>
+                                    <h3 class="text-sm font-bold text-white mb-2">
+                                        Ideas principales
+                                    </h3>
+
+                                    <ul class="text-xs text-slate-300 leading-relaxed space-y-2">
+                                        <li>• Aplicación del método científico al estudio de la sociedad.</li>
+                                        <li>• Importancia de la observación y la evidencia.</li>
+                                        <li>• Búsqueda de regularidades en los fenómenos sociales.</li>
+                                    </ul>
+                                </div>
+
+
+                                <div>
+                                    <h3 class="text-sm font-bold text-white mb-2">
+                                        Conceptos clave
+                                    </h3>
+
+                                    <div class="flex flex-wrap gap-2">
+
+                                        <span class="px-3 py-1 rounded-full bg-brandCyan/10 border border-brandCyan/20 text-brandCyan">
+                                            Ciencia
+                                        </span>
+
+                                        <span class="px-3 py-1 rounded-full bg-brandCyan/10 border border-brandCyan/20 text-brandCyan">
+                                            Observación
+                                        </span>
+
+                                        <span class="px-3 py-1 rounded-full bg-brandCyan/10 border border-brandCyan/20 text-brandCyan">
+                                            Método científico
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- MATERIALISMO HISTÓRICO -->
+                    <article class="bg-cardBg border border-brandSlate/40 rounded-2xl overflow-hidden transition-all duration-300 hover:border-brandCyan">
+
+                        <button
+                            onclick="toggleAccordion('acc2', this)"
+                            class="accordion-btn w-full p-5 text-left font-bold text-white flex justify-between items-center hover:bg-brandSlate/20 transition-colors">
+
+                            <span class="text-sm flex items-center gap-3">
+                                <i class="fa-solid fa-hammer text-brandGold"></i>
+                                Materialismo Histórico
+                            </span>
+
+                            <i class="accordion-arrow fa-solid fa-chevron-down text-brandGold text-xs transition-transform duration-300"></i>
+
+                        </button>
+
+
+                        <div id="acc2"
+                             class="accordion-content hidden p-5 border-t border-brandSlate/30 bg-darkBg/80">
+
+                            <div class="space-y-5">
+
+                                <div>
+                                    <h3 class="text-sm font-bold text-white mb-2">
+                                        ¿Qué plantea?
+                                    </h3>
+
+                                    <p class="text-xs text-slate-300 leading-relaxed">
+                                        Es un marco conceptual desarrollado por Karl Marx y
+                                        Friedrich Engels para comprender la historia a partir
+                                        de las condiciones materiales, las fuerzas productivas,
+                                        las relaciones de producción y la lucha de clases.
+                                    </p>
+                                </div>
+
+
+                                <div>
+                                    <h3 class="text-sm font-bold text-white mb-2">
+                                        Ideas principales
+                                    </h3>
+
+                                    <ul class="text-xs text-slate-300 leading-relaxed space-y-2">
+                                        <li>• Analiza las condiciones materiales de la sociedad.</li>
+                                        <li>• Estudia las relaciones de producción y las fuerzas productivas.</li>
+                                        <li>• Explica el cambio histórico mediante contradicciones y lucha de clases.</li>
+                                        <li>• Relaciona la infraestructura económica con la superestructura social e ideológica.</li>
+                                    </ul>
+                                </div>
+
+
+                                <div>
+                                    <h3 class="text-sm font-bold text-white mb-2">
+                                        Conceptos clave
+                                    </h3>
+
+                                    <div class="flex flex-wrap gap-2">
+
+                                        <span class="px-3 py-1 rounded-full bg-brandGold/10 border border-brandGold/20 text-brandGold">
+                                            Karl Marx
+                                        </span>
+
+                                        <span class="px-3 py-1 rounded-full bg-brandGold/10 border border-brandGold/20 text-brandGold">
+                                            Lucha de clases
+                                        </span>
+
+                                        <span class="px-3 py-1 rounded-full bg-brandGold/10 border border-brandGold/20 text-brandGold">
+                                            Producción
+                                        </span>
+
+                                        <span class="px-3 py-1 rounded-full bg-brandGold/10 border border-brandGold/20 text-brandGold">
+                                            Cambio histórico
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ESTRUCTURAL FUNCIONALISMO -->
+                    <article class="bg-cardBg border border-brandSlate/40 rounded-2xl overflow-hidden transition-all duration-300 hover:border-brandCyan">
+
+                        <button
+                            onclick="toggleAccordion('acc3', this)"
+                            class="accordion-btn w-full p-5 text-left font-bold text-white flex justify-between items-center hover:bg-brandSlate/20 transition-colors">
+
+                            <span class="text-sm flex items-center gap-3">
+                                <i class="fa-solid fa-cubes text-brandBlue"></i>
+                                Estructural Funcionalismo
+                            </span>
+
+                            <i class="accordion-arrow fa-solid fa-chevron-down text-brandBlue text-xs transition-transform duration-300"></i>
+
+                        </button>
+
+
+                        <div id="acc3"
+                             class="accordion-content hidden p-5 border-t border-brandSlate/30 bg-darkBg/80">
+
+                            <div class="space-y-5">
+
+                                <div>
+                                    <h3 class="text-sm font-bold text-white mb-2">
+                                        ¿Qué plantea?
+                                    </h3>
+
+                                    <p class="text-xs text-slate-300 leading-relaxed">
+                                        Considera a la sociedad como un sistema complejo formado
+                                        por diferentes partes relacionadas entre sí. Las
+                                        instituciones, normas, roles y grupos cumplen funciones
+                                        que contribuyen al funcionamiento y estabilidad social.
+                                    </p>
+                                </div>
+
+
+                                <div>
+                                    <h3 class="text-sm font-bold text-white mb-2">
+                                        Ideas principales
+                                    </h3>
+
+                                    <ul class="text-xs text-slate-300 leading-relaxed space-y-2">
+                                        <li>• La sociedad funciona como un sistema interdependiente.</li>
+                                        <li>• Las instituciones cumplen determinadas funciones sociales.</li>
+                                        <li>• Destaca la integración, el consenso y la estabilidad.</li>
+                                        <li>• Talcott Parsons desarrolló importantes aportes al funcionalismo.</li>
+                                    </ul>
+                                </div>
+
+
+                                <div>
+                                    <h3 class="text-sm font-bold text-white mb-2">
+                                        Conceptos clave
+                                    </h3>
+
+                                    <div class="flex flex-wrap gap-2">
+
+                                        <span class="px-3 py-1 rounded-full bg-brandBlue/10 border border-brandBlue/20 text-brandBlue">
+                                            Sistema social
+                                        </span>
+
+                                        <span class="px-3 py-1 rounded-full bg-brandBlue/10 border border-brandBlue/20 text-brandBlue">
+                                            Instituciones
+                                        </span>
+
+                                        <span class="px-3 py-1 rounded-full bg-brandBlue/10 border border-brandBlue/20 text-brandBlue">
+                                            Integración
+                                        </span>
+
+                                        <span class="px-3 py-1 rounded-full bg-brandBlue/10 border border-brandBlue/20 text-brandBlue">
+                                            Talcott Parsons
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- TEORÍA DEL CONFLICTO -->
+                    <article class="bg-cardBg border border-brandSlate/40 rounded-2xl overflow-hidden transition-all duration-300 hover:border-brandCyan">
+
+                        <button
+                            onclick="toggleAccordion('acc4', this)"
+                            class="accordion-btn w-full p-5 text-left font-bold text-white flex justify-between items-center hover:bg-brandSlate/20 transition-colors">
+
+                            <span class="text-sm flex items-center gap-3">
+                                <i class="fa-solid fa-scale-unbalanced-flip text-brandGold"></i>
+                                Teoría del Conflicto
+                            </span>
+
+                            <i class="accordion-arrow fa-solid fa-chevron-down text-brandGold text-xs transition-transform duration-300"></i>
+
+                        </button>
+
+
+                        <div id="acc4"
+                             class="accordion-content hidden p-5 border-t border-brandSlate/30 bg-darkBg/80">
+
+                            <div class="space-y-5">
+
+                                <div>
+                                    <h3 class="text-sm font-bold text-white mb-2">
+                                        ¿Qué plantea?
+                                    </h3>
+
+                                    <p class="text-xs text-slate-300 leading-relaxed">
+                                        Estudia las dinámicas de conflicto presentes en las
+                                        relaciones sociales. Se centra en las diferencias
+                                        de poder, los intereses divergentes y la distribución
+                                        desigual de recursos entre grupos sociales.
+                                    </p>
+                                </div>
+
+
+                                <div>
+                                    <h3 class="text-sm font-bold text-white mb-2">
+                                        Ideas principales
+                                    </h3>
+
+                                    <ul class="text-xs text-slate-300 leading-relaxed space-y-2">
+                                        <li>• Analiza las relaciones de poder.</li>
+                                        <li>• Estudia la distribución desigual de recursos.</li>
+                                        <li>• Examina los intereses divergentes entre grupos.</li>
+                                        <li>• Considera el conflicto como parte de la dinámica social.</li>
+                                        <li>• Explica cómo los conflictos pueden generar cambios sociales.</li>
+                                    </ul>
+                                </div>
+
+
+                                <div>
+                                    <h3 class="text-sm font-bold text-white mb-2">
+                                        Conceptos clave
+                                    </h3>
+
+                                    <div class="flex flex-wrap gap-2">
+
+                                        <span class="px-3 py-1 rounded-full bg-brandGold/10 border border-brandGold/20 text-brandGold">
+                                            Poder
+                                        </span>
+
+                                        <span class="px-3 py-1 rounded-full bg-brandGold/10 border border-brandGold/20 text-brandGold">
+                                            Desigualdad
+                                        </span>
+
+                                        <span class="px-3 py-1 rounded-full bg-brandGold/10 border border-brandGold/20 text-brandGold">
+                                            Recursos
+                                        </span>
+
+                                        <span class="px-3 py-1 rounded-full bg-brandGold/10 border border-brandGold/20 text-brandGold">
+                                            Cambio social
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- TEORÍA CRÍTICA -->
+                    <article class="bg-cardBg border border-brandSlate/40 rounded-2xl overflow-hidden transition-all duration-300 hover:border-brandCyan">
+
+                        <button
+                            onclick="toggleAccordion('acc5', this)"
+                            class="accordion-btn w-full p-5 text-left font-bold text-white flex justify-between items-center hover:bg-brandSlate/20 transition-colors">
+
+                            <span class="text-sm flex items-center gap-3">
+                                <i class="fa-solid fa-shield-halved text-brandCyan"></i>
+                                Teoría Crítica
+                            </span>
+
+                            <i class="accordion-arrow fa-solid fa-chevron-down text-brandCyan text-xs transition-transform duration-300"></i>
+
+                        </button>
+
+
+                        <div id="acc5"
+                             class="accordion-content hidden p-5 border-t border-brandSlate/30 bg-darkBg/80">
+
+                            <div class="space-y-5">
+
+                                <div>
+                                    <h3 class="text-sm font-bold text-white mb-2">
+                                        ¿Qué plantea?
+                                    </h3>
+
+                                    <p class="text-xs text-slate-300 leading-relaxed">
+                                        La Teoría Crítica, vinculada principalmente con la
+                                        Escuela de Frankfurt, analiza las estructuras de
+                                        dominación presentes en la sociedad y cuestiona
+                                        fenómenos como el capitalismo y la cultura de masas.
+                                    </p>
+                                </div>
+
+
+                                <div>
+                                    <h3 class="text-sm font-bold text-white mb-2">
+                                        Ideas principales
+                                    </h3>
+
+                                    <ul class="text-xs text-slate-300 leading-relaxed space-y-2">
+                                        <li>• Analiza las relaciones de dominación.</li>
+                                        <li>• Cuestiona las estructuras sociales que reproducen desigualdades.</li>
+                                        <li>• Estudia la cultura de masas y sus efectos sociales.</li>
+                                        <li>• Busca desarrollar una mirada crítica sobre la sociedad.</li>
+                                    </ul>
+                                </div>
+
+
+                                <div>
+                                    <h3 class="text-sm font-bold text-white mb-2">
+                                        Conceptos clave
+                                    </h3>
+
+                                    <div class="flex flex-wrap gap-2">
+
+                                        <span class="px-3 py-1 rounded-full bg-brandCyan/10 border border-brandCyan/20 text-brandCyan">
+                                            Escuela de Frankfurt
+                                        </span>
+
+                                        <span class="px-3 py-1 rounded-full bg-brandCyan/10 border border-brandCyan/20 text-brandCyan">
+                                            Dominación
+                                        </span>
+
+                                        <span class="px-3 py-1 rounded-full bg-brandCyan/10 border border-brandCyan/20 text-brandCyan">
+                                            Cultura de masas
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- INTERACCIONISMO SIMBÓLICO -->
+                    <article class="bg-cardBg border border-brandSlate/40 rounded-2xl overflow-hidden transition-all duration-300 hover:border-brandCyan">
+
+                        <button
+                            onclick="toggleAccordion('acc6', this)"
+                            class="accordion-btn w-full p-5 text-left font-bold text-white flex justify-between items-center hover:bg-brandSlate/20 transition-colors">
+
+                            <span class="text-sm flex items-center gap-3">
+                                <i class="fa-solid fa-comments text-brandBlue"></i>
+                                Interaccionismo Simbólico
+                            </span>
+
+                            <i class="accordion-arrow fa-solid fa-chevron-down text-brandBlue text-xs transition-transform duration-300"></i>
+
+                        </button>
+
+
+                        <div id="acc6"
+                             class="accordion-content hidden p-5 border-t border-brandSlate/30 bg-darkBg/80">
+
+                            <div class="space-y-5">
+
+                                <div>
+                                    <h3 class="text-sm font-bold text-white mb-2">
+                                        ¿Qué plantea?
+                                    </h3>
+
+                                    <p class="text-xs text-slate-300 leading-relaxed">
+                                        Analiza cómo las personas construyen significados
+                                        mediante la interacción social y cómo esos significados
+                                        influyen en la manera en que interpretan y actúan
+                                        dentro de la sociedad.
+                                    </p>
+                                </div>
+
+
+                                <div>
+                                    <h3 class="text-sm font-bold text-white mb-2">
+                                        Ideas principales
+                                    </h3>
+
+                                    <ul class="text-xs text-slate-300 leading-relaxed space-y-2">
+                                        <li>• Se enfoca en las interacciones de la vida cotidiana.</li>
+                                        <li>• Estudia los significados construidos socialmente.</li>
+                                        <li>• Analiza cómo las personas interpretan símbolos y situaciones.</li>
+                                        <li>• George Herbert Mead y Herbert Blumer son autores relacionados con esta corriente.</li>
+                                    </ul>
+                                </div>
+
+
+                                <div>
+                                    <h3 class="text-sm font-bold text-white mb-2">
+                                        Conceptos clave
+                                    </h3>
+
+                                    <div class="flex flex-wrap gap-2">
+
+                                        <span class="px-3 py-1 rounded-full bg-brandBlue/10 border border-brandBlue/20 text-brandBlue">
+                                            Interacción
+                                        </span>
+
+                                        <span class="px-3 py-1 rounded-full bg-brandBlue/10 border border-brandBlue/20 text-brandBlue">
+                                            Significados
+                                        </span>
+
+                                        <span class="px-3 py-1 rounded-full bg-brandBlue/10 border border-brandBlue/20 text-brandBlue">
+                                            Vida cotidiana
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- IDEA CLAVE -->
+        <section>
+
+            <div class="border-l-4 border-brandGold bg-brandGold/5 rounded-r-2xl p-6">
+
+                <div class="flex items-center gap-3 mb-3">
+
+                    <i class="fa-solid fa-lightbulb text-brandGold text-lg"></i>
+
+                    <h2 class="font-bold text-white">
+
+                        Idea clave
+
+                    </h2>
+
+                </div>
+
+
+                <p class="text-sm text-slate-300 leading-relaxed">
+
+                    Las corrientes sociológicas ofrecen diferentes formas de
+                    interpretar la realidad social. Algunas se enfocan en el
+                    orden y la integración, mientras otras estudian el conflicto,
+                    las desigualdades, las relaciones de poder, las condiciones
+                    materiales o los significados construidos mediante la
+                    interacción social.
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-cardBg/60 border-t border-brandTaupe/30 py-6 text-center text-xs text-slate-400">
+        <p>
+            &copy; Sociopedia — Plataforma Educativa Interactiva.
+        </p>
+    </footer>
+
+
+    <script>
+
+        // TODO: Controlar los acordeones
+        function toggleAccordion(id, boton) {
+
+            const contenido = document.getElementById(id);
+            const estaAbierto = !contenido.classList.contains('hidden');
+
+            document.querySelectorAll('.accordion-content').forEach(elemento => {
+                elemento.classList.add('hidden');
+            });
+
+            document.querySelectorAll('.accordion-arrow').forEach(icono => {
+                icono.classList.remove('rotate-180');
+            });
+
+            if (!estaAbierto) {
+
+                contenido.classList.remove('hidden');
+
+                const flecha = boton.querySelector('.accordion-arrow');
+
+                flecha.classList.add('rotate-180');
+
+            }
+
+        }
+
+
+        // TODO: Mostrar y ocultar el menú móvil
+        document.getElementById('mobile-btn')?.addEventListener('click', () => {
+
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+
+        });
+
+    </script>
+
+</body>
+</html>

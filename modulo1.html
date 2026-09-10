@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 | Ciencia y Ciencias Sociales</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGold: '#F4B243',
+                        brandBlue: '#4260F5',
+                        brandCyan: '#42D1F5',
+                        brandTaupe: '#756B5A',
+                        brandSlate: '#5A5F75',
+                        darkBg: '#121622',
+                        cardBg: '#1C2234'
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards'
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-darkBg text-slate-100 font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- MENÚ DE NAVEGACIÓN FIJO SIEMPRE VISIBLE -->
+    <header class="bg-darkBg/90 backdrop-blur-md border-b border-brandTaupe/30 sticky top-0 z-50 transition-all duration-300">
+
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+
+            <a href="index.html" class="flex items-center space-x-3 group">
+
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-users text-2xl text-brandBlue"></i>
+                </div>
+
+                <span class="font-black text-xl tracking-tight text-white group-hover:text-brandCyan transition-colors">
+                    Socio<span class="text-brandGold">pedia</span>
+                </span>
+
+            </a>
+
+            <!-- Módulos Visibles en Desktop -->
+            <nav class="hidden lg:flex items-center space-x-1 bg-cardBg/80 p-1.5 rounded-2xl border border-brandSlate/30">
+
+                <a href="index.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Inicio
+                </a>
+
+                <a href="modulo1.html"
+                   class="px-4 py-2 rounded-xl text-xs font-bold bg-brandBlue text-white shadow-md">
+                    Módulo 1
+                </a>
+
+                <a href="modulo2.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Módulo 2
+                </a>
+
+                <a href="modulo3.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Módulo 3
+                </a>
+
+                <a href="modulo4.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Módulo 4
+                </a>
+
+                <a href="modulo5.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+                    Módulo 5
+                </a>
+
+                <a href="quiz.html"
+                   class="px-4 py-2 rounded-xl text-xs font-bold text-brandGold border border-brandGold/40 hover:bg-brandGold hover:text-darkBg transition-all">
+                    Quiz
+                </a>
+
+            </nav>
+
+            <!-- Botón del menú móvil -->
+            <button id="mobile-btn"
+                    class="lg:hidden text-slate-300 hover:text-brandCyan text-2xl focus:outline-none">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+        <!-- Menú Móvil -->
+        <div id="mobile-menu"
+             class="hidden lg:hidden bg-cardBg border-b border-brandTaupe/30 px-6 py-4 space-y-2 text-sm">
+
+            <a href="index.html" class="block text-slate-300 hover:text-white">
+                Inicio
+            </a>
+
+            <a href="modulo1.html" class="block text-brandCyan font-bold">
+                Módulo 1: Ciencia
+            </a>
+
+            <a href="modulo2.html" class="block text-slate-300 hover:text-white">
+                Módulo 2: Sociología
+            </a>
+
+            <a href="modulo3.html" class="block text-slate-300 hover:text-white">
+                Módulo 3: Historia
+            </a>
+
+            <a href="modulo4.html" class="block text-slate-300 hover:text-white">
+                Módulo 4: Precursores
+            </a>
+
+            <a href="modulo5.html" class="block text-slate-300 hover:text-white">
+                Módulo 5: Corrientes
+            </a>
+
+            <a href="quiz.html" class="block text-brandGold">
+                Quiz Evaluativo
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container mx-auto px-6 py-12 max-w-5xl animate-fade-in-up">
+
+        <!-- ENCABEZADO DEL MÓDULO -->
+        <section class="mb-12 text-center sm:text-left">
+
+            <span class="text-xs font-extrabold uppercase tracking-widest
+                         text-brandCyan bg-brandCyan/10 px-3.5 py-1.5
+                         rounded-full border border-brandCyan/30">
+
+                Módulo 1
+            </span>
+
+            <h1 class="text-3xl sm:text-5xl font-black text-white mt-3">
+                Ciencia y Ciencias Sociales
+            </h1>
+
+            <p class="text-slate-300 text-sm sm:text-base mt-3 max-w-3xl leading-relaxed">
+                Comprende las características del conocimiento científico,
+                su diferencia con el sentido común y la ubicación de las
+                Ciencias Sociales dentro del conocimiento científico.
+            </p>
+
+        </section>
+
+
+        <!-- CONOCIMIENTO CIENTÍFICO -->
+        <section class="mb-12">
+
+            <h2 class="text-xl font-bold text-brandGold mb-5 flex items-center gap-2">
+                <i class="fa-solid fa-microscope"></i>
+                ¿Qué es el conocimiento científico?
+            </h2>
+
+            <div class="bg-cardBg border border-brandSlate/40 rounded-3xl p-6 sm:p-8">
+
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">
+                    El conocimiento científico es un saber sistemático que busca
+                    comprender y explicar los fenómenos mediante procedimientos
+                    organizados. Se apoya en la observación, el análisis y la
+                    contrastación de la información para construir explicaciones
+                    fundamentadas.
+                </p>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                    <div class="p-4 rounded-2xl bg-darkBg border border-brandSlate/30">
+                        <i class="fa-solid fa-list-check text-brandCyan text-xl mb-3"></i>
+
+                        <h3 class="font-bold text-white text-sm mb-1">
+                            Sistemático
+                        </h3>
+
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Organiza sus procedimientos y conocimientos de manera ordenada.
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-darkBg border border-brandSlate/30">
+                        <i class="fa-solid fa-eye text-brandCyan text-xl mb-3"></i>
+
+                        <h3 class="font-bold text-white text-sm mb-1">
+                            Basado en observación
+                        </h3>
+
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Parte del estudio y análisis de fenómenos observables.
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-darkBg border border-brandSlate/30">
+                        <i class="fa-solid fa-magnifying-glass text-brandCyan text-xl mb-3"></i>
+
+                        <h3 class="font-bold text-white text-sm mb-1">
+                            Contrastable
+                        </h3>
+
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Sus afirmaciones pueden ser sometidas a comprobación.
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-darkBg border border-brandSlate/30">
+                        <i class="fa-solid fa-layer-group text-brandCyan text-xl mb-3"></i>
+
+                        <h3 class="font-bold text-white text-sm mb-1">
+                            Acumulativo
+                        </h3>
+
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Construye nuevos conocimientos a partir de conocimientos anteriores.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SENTIDO COMÚN VS CONOCIMIENTO CIENTÍFICO -->
+        <section class="mb-12">
+
+            <h2 class="text-xl font-bold text-brandGold mb-5 flex items-center gap-2">
+                <i class="fa-solid fa-scale-balanced"></i>
+                Conocimiento Científico vs. Sentido Común
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- SENTIDO COMÚN -->
+                <div class="bg-cardBg border border-brandSlate/40 p-6 rounded-2xl
+                            hover:border-brandTaupe transition-all hover:-translate-y-1">
+
+                    <div class="w-12 h-12 rounded-xl bg-brandTaupe/20 text-brandGold
+                                flex items-center justify-center text-xl mb-4">
+
+                        <i class="fa-solid fa-brain"></i>
+
+                    </div>
+
+                    <h3 class="text-lg font-bold text-white mb-2">
+                        Sentido Común
+                    </h3>
+
+                    <p class="text-sm text-slate-300 mb-5 leading-relaxed">
+                        Es el saber cotidiano que las personas construyen a partir
+                        de sus experiencias, observaciones personales, tradiciones
+                        y suposiciones.
+                    </p>
+
+                    <ul class="text-xs text-slate-400 space-y-3 border-t
+                               border-brandSlate/30 pt-4">
+
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-xmark text-red-400 mt-0.5"></i>
+                            <span>Puede ser subjetivo.</span>
+                        </li>
+
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-xmark text-red-400 mt-0.5"></i>
+                            <span>No sigue necesariamente un método sistemático.</span>
+                        </li>
+
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-xmark text-red-400 mt-0.5"></i>
+                            <span>Puede basarse en experiencias y creencias compartidas.</span>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- CONOCIMIENTO CIENTÍFICO -->
+                <div class="bg-cardBg border border-brandCyan/40 p-6 rounded-2xl
+                            hover:border-brandCyan transition-all hover:-translate-y-1
+                            shadow-lg shadow-brandCyan/5">
+
+                    <div class="w-12 h-12 rounded-xl bg-brandBlue/20 text-brandCyan
+                                flex items-center justify-center text-xl mb-4">
+
+                        <i class="fa-solid fa-microscope"></i>
+
+                    </div>
+
+                    <h3 class="text-lg font-bold text-white mb-2">
+                        Conocimiento Científico
+                    </h3>
+
+                    <p class="text-sm text-slate-200 mb-5 leading-relaxed">
+                        Es un saber construido mediante procedimientos sistemáticos
+                        que permiten observar, analizar y contrastar los fenómenos
+                        estudiados.
+                    </p>
+
+                    <ul class="text-xs text-slate-300 space-y-3 border-t
+                               border-brandSlate/30 pt-4">
+
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-brandCyan mt-0.5"></i>
+                            <span>Utiliza procedimientos sistemáticos.</span>
+                        </li>
+
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-brandCyan mt-0.5"></i>
+                            <span>Busca fundamentar sus afirmaciones.</span>
+                        </li>
+
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-brandCyan mt-0.5"></i>
+                            <span>Permite contrastar y desarrollar explicaciones.</span>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CIENCIAS SOCIALES -->
+        <section class="mb-12">
+
+            <h2 class="text-xl font-bold text-brandGold mb-5 flex items-center gap-2">
+                <i class="fa-solid fa-people-group"></i>
+                ¿Qué son las Ciencias Sociales?
+            </h2>
+
+            <div class="bg-cardBg border border-brandSlate/40 rounded-3xl p-6 sm:p-8">
+
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">
+                    Las Ciencias Sociales estudian a los seres humanos en sus
+                    dimensiones sociales y culturales. Analizan el comportamiento,
+                    las relaciones entre las personas, las estructuras sociales,
+                    la organización de la sociedad y los procesos de cambio.
+                </p>
+
+                <div class="grid sm:grid-cols-2 gap-4">
+
+                    <div class="flex gap-4 p-4 rounded-2xl bg-darkBg border border-brandSlate/30">
+
+                        <div class="w-10 h-10 shrink-0 rounded-xl bg-brandBlue/20
+                                    text-brandCyan flex items-center justify-center">
+
+                            <i class="fa-solid fa-user-group"></i>
+
+                        </div>
+
+                        <div>
+                            <h3 class="font-bold text-white text-sm mb-1">
+                                Comportamiento e interacción
+                            </h3>
+
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Estudian cómo las personas actúan, se relacionan
+                                y participan en la vida social.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex gap-4 p-4 rounded-2xl bg-darkBg border border-brandSlate/30">
+
+                        <div class="w-10 h-10 shrink-0 rounded-xl bg-brandBlue/20
+                                    text-brandCyan flex items-center justify-center">
+
+                            <i class="fa-solid fa-building-columns"></i>
+
+                        </div>
+
+                        <div>
+                            <h3 class="font-bold text-white text-sm mb-1">
+                                Organización social
+                            </h3>
+
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Analizan estructuras, instituciones y formas
+                                de organización de la sociedad.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex gap-4 p-4 rounded-2xl bg-darkBg border border-brandSlate/30">
+
+                        <div class="w-10 h-10 shrink-0 rounded-xl bg-brandBlue/20
+                                    text-brandCyan flex items-center justify-center">
+
+                            <i class="fa-solid fa-arrows-rotate"></i>
+
+                        </div>
+
+                        <div>
+                            <h3 class="font-bold text-white text-sm mb-1">
+                                Cambio social
+                            </h3>
+
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Estudian los procesos mediante los cuales las
+                                sociedades cambian o conservan sus formas de organización.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex gap-4 p-4 rounded-2xl bg-darkBg border border-brandSlate/30">
+
+                        <div class="w-10 h-10 shrink-0 rounded-xl bg-brandBlue/20
+                                    text-brandCyan flex items-center justify-center">
+
+                            <i class="fa-solid fa-earth-americas"></i>
+
+                        </div>
+
+                        <div>
+                            <h3 class="font-bold text-white text-sm mb-1">
+                                Dimensiones sociales y culturales
+                            </h3>
+
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Consideran aspectos culturales, económicos,
+                                políticos, históricos y geográficos de la vida social.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CLASIFICACIÓN DE LAS CIENCIAS -->
+        <section class="mb-12">
+
+            <h2 class="text-xl font-bold text-brandGold mb-5 flex items-center gap-2">
+                <i class="fa-solid fa-sitemap"></i>
+                Clasificación de las Ciencias
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <!-- FORMALES -->
+                <div class="bg-cardBg border border-brandSlate/40 p-6 rounded-2xl
+                            hover:border-brandGold transition-all hover:-translate-y-1">
+
+                    <span class="text-brandGold font-extrabold text-xs uppercase
+                                 tracking-wider block mb-3">
+                        Ciencias Formales
+                    </span>
+
+                    <div class="w-12 h-12 rounded-xl bg-brandGold/10 text-brandGold
+                                flex items-center justify-center text-xl mb-4">
+
+                        <i class="fa-solid fa-calculator"></i>
+
+                    </div>
+
+                    <h3 class="font-bold text-white text-lg mb-2">
+                        Lógica y Matemáticas
+                    </h3>
+
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Trabajan con sistemas abstractos y relaciones formales.
+                        Utilizan principalmente el razonamiento y la demostración.
+                    </p>
+
+                </div>
+
+
+                <!-- NATURALES -->
+                <div class="bg-cardBg border border-brandSlate/40 p-6 rounded-2xl
+                            hover:border-brandCyan transition-all hover:-translate-y-1">
+
+                    <span class="text-brandCyan font-extrabold text-xs uppercase
+                                 tracking-wider block mb-3">
+                        Ciencias Naturales
+                    </span>
+
+                    <div class="w-12 h-12 rounded-xl bg-brandBlue/20 text-brandCyan
+                                flex items-center justify-center text-xl mb-4">
+
+                        <i class="fa-solid fa-flask"></i>
+
+                    </div>
+
+                    <h3 class="font-bold text-white text-lg mb-2">
+                        Física, Química y Biología
+                    </h3>
+
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Estudian fenómenos de la naturaleza física y biológica
+                        mediante la observación y diferentes procedimientos científicos.
+                    </p>
+
+                </div>
+
+
+                <!-- SOCIALES -->
+                <div class="bg-brandBlue/15 border border-brandBlue/60 p-6 rounded-2xl
+                            hover:border-brandCyan transition-all hover:-translate-y-1
+                            shadow-md">
+
+                    <span class="text-brandCyan font-extrabold text-xs uppercase
+                                 tracking-wider block mb-3">
+                        Ciencias Sociales
+                    </span>
+
+                    <div class="w-12 h-12 rounded-xl bg-brandCyan/10 text-brandCyan
+                                flex items-center justify-center text-xl mb-4">
+
+                        <i class="fa-solid fa-people-group"></i>
+
+                    </div>
+
+                    <h3 class="font-bold text-white text-lg mb-2">
+                        Estudio de la sociedad
+                    </h3>
+
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Estudian a los seres humanos en su dimensión social y
+                        cultural, sus relaciones, estructuras, organización y cambios.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    <!-- DISCIPLINAS DE LAS CIENCIAS SOCIALES -->
+    <section class="mb-12">
+
+    <div class="text-center mb-6">
+
+        <h2 class="text-xl font-bold text-brandGold flex items-center
+                   justify-center gap-2">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+            Disciplinas de las Ciencias Sociales
+        </h2>
+
+        <p class="text-xs sm:text-sm text-slate-400 mt-2">
+            Selecciona una disciplina para conocer qué aspecto de la vida
+            social aborda.
+        </p>
+
+    </div>
+
+
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+
+        <button onclick="mostrarDisciplina('antropologia', this)"
+                class="disciplina-btn bg-cardBg border border-brandSlate/40
+                       p-4 rounded-xl hover:border-brandCyan
+                       transition-all">
+
+            <i class="fa-solid fa-earth-americas text-brandCyan mb-2"></i>
+
+            <span class="block text-xs font-bold text-white">
+                Antropología
+            </span>
+
+        </button>
+
+
+        <button onclick="mostrarDisciplina('politica', this)"
+                class="disciplina-btn bg-cardBg border border-brandSlate/40
+                       p-4 rounded-xl hover:border-brandCyan
+                       transition-all">
+
+            <i class="fa-solid fa-landmark text-brandCyan mb-2"></i>
+
+            <span class="block text-xs font-bold text-white">
+                Ciencia Política
+            </span>
+
+        </button>
+
+
+        <button onclick="mostrarDisciplina('demografia', this)"
+                class="disciplina-btn bg-cardBg border border-brandSlate/40
+                       p-4 rounded-xl hover:border-brandCyan
+                       transition-all">
+
+            <i class="fa-solid fa-chart-column text-brandCyan mb-2"></i>
+
+            <span class="block text-xs font-bold text-white">
+                Demografía
+            </span>
+
+        </button>
+
+
+        <button onclick="mostrarDisciplina('economia', this)"
+                class="disciplina-btn bg-cardBg border border-brandSlate/40
+                       p-4 rounded-xl hover:border-brandCyan
+                       transition-all">
+
+            <i class="fa-solid fa-coins text-brandCyan mb-2"></i>
+
+            <span class="block text-xs font-bold text-white">
+                Economía
+            </span>
+
+        </button>
+
+
+        <button onclick="mostrarDisciplina('historia', this)"
+                class="disciplina-btn bg-cardBg border border-brandSlate/40
+                       p-4 rounded-xl hover:border-brandCyan
+                       transition-all">
+
+            <i class="fa-solid fa-book text-brandCyan mb-2"></i>
+
+            <span class="block text-xs font-bold text-white">
+                Historia
+            </span>
+
+        </button>
+
+
+        <button onclick="mostrarDisciplina('psicologia', this)"
+                class="disciplina-btn bg-cardBg border border-brandSlate/40
+                       p-4 rounded-xl hover:border-brandCyan
+                       transition-all">
+
+            <i class="fa-solid fa-head-side-virus text-brandCyan mb-2"></i>
+
+            <span class="block text-xs font-bold text-white">
+                Psicología
+            </span>
+
+        </button>
+
+
+        <button onclick="mostrarDisciplina('sociologia', this)"
+                class="disciplina-btn bg-cardBg border border-brandSlate/40
+                       p-4 rounded-xl hover:border-brandCyan
+                       transition-all">
+
+            <i class="fa-solid fa-people-group text-brandCyan mb-2"></i>
+
+            <span class="block text-xs font-bold text-white">
+                Sociología
+            </span>
+
+        </button>
+
+
+        <button onclick="mostrarDisciplina('geografia', this)"
+                class="disciplina-btn bg-cardBg border border-brandSlate/40
+                       p-4 rounded-xl hover:border-brandCyan
+                       transition-all">
+
+            <i class="fa-solid fa-map-location-dot text-brandCyan mb-2"></i>
+
+            <span class="block text-xs font-bold text-white">
+                Geografía Humana
+            </span>
+
+        </button>
+
+    </div>
+
+
+    <!-- INFORMACIÓN DE LA DISCIPLINA -->
+    <div id="info-disciplina"
+         class="hidden mt-5 bg-cardBg border border-brandCyan/40
+                rounded-2xl p-6 animate-fade-in-up">
+
+        <div class="flex items-start gap-4">
+
+            <div id="icono-disciplina"
+                 class="w-12 h-12 shrink-0 rounded-xl bg-brandBlue/20
+                        text-brandCyan flex items-center justify-center text-xl">
+
+                <i class="fa-solid fa-people-group"></i>
+
+            </div>
+
+            <div>
+
+                <h3 id="titulo-disciplina"
+                    class="text-lg font-bold text-white mb-2">
+                    Sociología
+                </h3>
+
+                <p id="texto-disciplina"
+                   class="text-sm text-slate-300 leading-relaxed">
+                    La Sociología realiza un análisis científico de la
+                    sociedad, los grupos humanos y sus relaciones.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- UBICACIÓN DE LA SOCIOLOGÍA -->
+        <section class="mb-12">
+
+            <h2 class="text-xl font-bold text-brandGold mb-5 flex items-center gap-2">
+                <i class="fa-solid fa-location-dot"></i>
+                ¿Dónde se ubica la Sociología?
+            </h2>
+
+            <div class="bg-gradient-to-r from-brandBlue/15 to-brandCyan/10
+                        border border-brandCyan/30 rounded-3xl p-6 sm:p-8">
+
+                <div class="flex flex-col md:flex-row items-center gap-6">
+
+                    <div class="w-20 h-20 shrink-0 rounded-2xl bg-brandBlue/20
+                                text-brandCyan flex items-center justify-center text-3xl">
+
+                        <i class="fa-solid fa-people-group"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3 class="text-xl font-bold text-white mb-3">
+                            La Sociología como Ciencia Social
+                        </h3>
+
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            La Sociología forma parte de las Ciencias Sociales.
+                            Su campo se centra en el análisis científico de la
+                            sociedad, los grupos humanos y las relaciones sociales.
+                            Desde esta perspectiva, busca comprender cómo se
+                            organizan las sociedades y cómo se desarrollan las
+                            relaciones y procesos sociales.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- IDEA CLAVE -->
+        <section>
+
+            <div class="border-l-4 border-brandGold bg-brandGold/5 rounded-r-2xl p-6">
+
+                <div class="flex items-center gap-3 mb-3">
+
+                    <i class="fa-solid fa-lightbulb text-brandGold text-lg"></i>
+
+                    <h2 class="font-bold text-white">
+
+                        Idea clave
+
+                    </h2>
+
+                </div>
+
+
+                <p class="text-sm text-slate-300 leading-relaxed">
+
+                    Las Ciencias Sociales utilizan el conocimiento científico
+                    para estudiar diferentes dimensiones de la vida social.
+                    La Sociología se encuentra dentro de este campo y se ocupa
+                    del análisis científico de la sociedad y las relaciones sociales.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-cardBg/60 border-t border-brandTaupe/30 py-6 text-center text-xs text-slate-400">
+        <p>
+            &copy; Sociopedia — Plataforma Educativa Interactiva.
+        </p>
+    </footer>
+
+
+<!-- JAVASCRIPT -->
+<script>
+
+        // TODO: Mostrar información de cada disciplina
+        function mostrarDisciplina(disciplina) {
+
+        const info = document.getElementById('info-disciplina');
+        const titulo = document.getElementById('titulo-disciplina');
+        const texto = document.getElementById('texto-disciplina');
+        const icono = document.getElementById('icono-disciplina');
+
+        const disciplinas = {
+
+            antropologia: {
+                titulo: 'Antropología',
+                texto: 'Estudia al ser humano y sus sociedades desde una perspectiva social y cultural.',
+                icono: 'fa-earth-americas'
+            },
+
+            politica: {
+                titulo: 'Ciencia Política',
+                texto: 'Estudia los fenómenos relacionados con el poder, la organización política y las instituciones.',
+                icono: 'fa-landmark'
+            },
+
+            demografia: {
+                titulo: 'Demografía',
+                texto: 'Estudia las poblaciones humanas y sus características, composición y cambios.',
+                icono: 'fa-chart-column'
+            },
+
+            economia: {
+                titulo: 'Economía',
+                texto: 'Estudia las actividades relacionadas con la producción, distribución y consumo de bienes y recursos.',
+                icono: 'fa-coins'
+            },
+
+            historia: {
+                titulo: 'Historia',
+                texto: 'Estudia los acontecimientos y procesos del pasado de las sociedades humanas.',
+                icono: 'fa-book'
+            },
+
+            psicologia: {
+                titulo: 'Psicología',
+                texto: 'Estudia el comportamiento y los procesos mentales de las personas.',
+                icono: 'fa-head-side-virus'
+            },
+
+            sociologia: {
+                titulo: 'Sociología',
+                texto: 'Realiza un análisis científico de la sociedad, los grupos humanos y sus relaciones.',
+                icono: 'fa-people-group'
+            },
+
+            geografia: {
+                titulo: 'Geografía Humana',
+                texto: 'Estudia la relación entre las sociedades humanas y el espacio geográfico en el que se desarrollan.',
+                icono: 'fa-map-location-dot'
+            }
+
+        };
+
+        titulo.textContent = disciplinas[disciplina].titulo;
+        texto.textContent = disciplinas[disciplina].texto;
+
+        icono.innerHTML =
+            `<i class="fa-solid ${disciplinas[disciplina].icono}"></i>`;
+
+        info.classList.remove('hidden');
+
+        info.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest'
+        });
+
+        // TODO: Quitar selección de los demás botones
+        document.querySelectorAll('.disciplina-btn').forEach(boton => {
+
+            boton.classList.remove(
+                'bg-brandBlue/20',
+                'border-brandCyan/50'
+            );
+
+            boton.classList.add(
+                'bg-cardBg',
+                'border-brandSlate/40'
+            );
+
+        });
+
+        // TODO: Marcar el botón seleccionado
+        event.currentTarget.classList.remove(
+            'bg-cardBg',
+            'border-brandSlate/40'
+        );
+
+        event.currentTarget.classList.add(
+            'bg-brandBlue/20',
+            'border-brandCyan/50'
+        );
+    }
+
+
+    // TODO: Abrir y cerrar el menú móvil
+    document.getElementById('mobile-btn')?.addEventListener('click', () => {
+
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+
+    });
+
+</script>
+
+</body>
+</html>

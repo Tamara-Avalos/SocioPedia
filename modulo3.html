@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Módulo 3 | Desarrollo Histórico</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+
+        tailwind.config = {
+            theme: {
+                extend: {
+
+                    colors: {
+                        brandGold: '#F4B243',
+                        brandBlue: '#4260F5',
+                        brandCyan: '#42D1F5',
+                        brandTaupe: '#756B5A',
+                        brandSlate: '#5A5F75',
+                        darkBg: '#121622',
+                        cardBg: '#1C2234'
+                    },
+
+                    animation: {
+
+                        'fade-in-up':
+                            'fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+
+                        'fade-in':
+                            'fadeIn 0.4s ease-out forwards'
+                    },
+
+                    keyframes: {
+
+                        fadeInUp: {
+
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(20px)'
+                            },
+
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            }
+
+                        },
+
+                        fadeIn: {
+
+                            '0%': {
+                                opacity: '0'
+                            },
+
+                            '100%': {
+                                opacity: '1'
+                            }
+
+                        }
+
+                    }
+
+                }
+            }
+        }
+
+    </script>
+
+</head>
+
+
+<body class="bg-darkBg text-slate-100 font-sans min-h-screen flex flex-col justify-between">
+
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header class="bg-darkBg/90 backdrop-blur-md border-b border-brandTaupe/30 sticky top-0 z-50 transition-all duration-300">
+
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+
+            <a href="index.html" class="flex items-center space-x-3 group">
+
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold group-hover:scale-105 transition-transform">
+
+                    <i class="fa-solid fa-users text-2xl text-brandBlue"></i>
+
+                </div>
+
+                <span class="font-black text-xl tracking-tight text-white group-hover:text-brandCyan transition-colors">
+
+                    Socio<span class="text-brandGold">pedia</span>
+
+                </span>
+
+            </a>
+
+
+            <nav class="hidden lg:flex items-center space-x-1 bg-cardBg/80 p-1.5 rounded-2xl border border-brandSlate/30">
+
+                <a href="index.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+
+                    Inicio
+
+                </a>
+
+                <a href="modulo1.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+
+                    Módulo 1
+
+                </a>
+
+                <a href="modulo2.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+
+                    Módulo 2
+
+                </a>
+
+                <a href="modulo3.html"
+                   class="px-4 py-2 rounded-xl text-xs font-bold bg-brandBlue text-white shadow-md">
+
+                    Módulo 3
+
+                </a>
+
+                <a href="modulo4.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+
+                    Módulo 4
+
+                </a>
+
+                <a href="modulo5.html"
+                   class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-brandSlate/30 transition-all">
+
+                    Módulo 5
+
+                </a>
+
+                <a href="quiz.html"
+                   class="px-4 py-2 rounded-xl text-xs font-bold text-brandGold border border-brandGold/40 hover:bg-brandGold hover:text-darkBg transition-all">
+
+                    Quiz
+
+                </a>
+
+            </nav>
+
+
+            <button id="mobile-btn"
+                    class="lg:hidden text-slate-300 text-2xl hover:text-brandCyan transition-colors">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- MENÚ MÓVIL -->
+        <div id="mobile-menu"
+             class="hidden lg:hidden bg-cardBg border-b border-brandTaupe/30 px-6 py-4 space-y-2 text-sm">
+
+            <a href="index.html"
+               class="block text-slate-300 hover:text-brandCyan transition-colors">
+
+                Inicio
+
+            </a>
+
+            <a href="modulo1.html"
+               class="block text-slate-300 hover:text-brandCyan transition-colors">
+
+                Módulo 1: Ciencia
+
+            </a>
+
+            <a href="modulo2.html"
+               class="block text-slate-300 hover:text-brandCyan transition-colors">
+
+                Módulo 2: Sociología
+
+            </a>
+
+            <a href="modulo3.html"
+               class="block text-brandCyan font-bold">
+
+                Módulo 3: Historia
+
+            </a>
+
+            <a href="modulo4.html"
+               class="block text-slate-300 hover:text-brandCyan transition-colors">
+
+                Módulo 4: Precursores
+
+            </a>
+
+            <a href="modulo5.html"
+               class="block text-slate-300 hover:text-brandCyan transition-colors">
+
+                Módulo 5: Corrientes
+
+            </a>
+
+            <a href="quiz.html"
+               class="block text-brandGold">
+
+                Quiz Evaluativo
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container mx-auto px-6 py-12 max-w-5xl animate-fade-in-up">
+
+
+        <!-- ENCABEZADO -->
+        <div class="mb-10 text-center sm:text-left">
+
+            <span class="text-xs font-extrabold uppercase tracking-widest text-brandGold bg-brandGold/10 px-3.5 py-1.5 rounded-full border border-brandGold/30">
+
+                Módulo 3 • Desarrollo Histórico
+
+            </span>
+
+
+            <h1 class="text-3xl sm:text-5xl font-black text-white mt-3">
+
+                Desarrollo Histórico de la Sociología
+
+            </h1>
+
+
+            <p class="text-slate-300 text-sm sm:text-base mt-3 max-w-3xl">
+
+                Contexto sociohistórico que permitió el surgimiento de la Sociología
+                como disciplina científica.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- INTRODUCCIÓN -->
+        <section class="mb-12">
+
+            <div class="bg-cardBg border border-brandSlate/40 p-6 sm:p-8 rounded-3xl shadow-xl">
+
+                <div class="flex items-start gap-4">
+
+                    <div class="w-12 h-12 shrink-0 rounded-xl bg-brandBlue/20 text-brandCyan flex items-center justify-center text-xl">
+
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h2 class="text-xl font-bold text-white mb-3">
+
+                            El contexto del surgimiento de la Sociología
+
+                        </h2>
+
+
+                        <p class="text-sm text-slate-300 leading-relaxed">
+
+                            La Sociología surgió en un contexto de profundas transformaciones
+                            sociales, políticas, económicas e intelectuales. Durante los siglos
+                            XVIII y XIX, las sociedades europeas experimentaron cambios que
+                            modificaron las formas tradicionales de organización y dieron origen
+                            a nuevas formas de vida social.
+
+                        </p>
+
+
+                        <p class="text-sm text-slate-300 leading-relaxed mt-4">
+
+                            Entre los principales procesos relacionados con este surgimiento se
+                            encuentran la <strong class="text-brandCyan">Ilustración</strong>,
+                            la <strong class="text-brandGold">Revolución Francesa</strong> y la
+                            <strong class="text-brandCyan">Revolución Industrial</strong>.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- LÍNEA DE TIEMPO -->
+        <section class="mb-12">
+
+            <div class="text-center mb-8">
+
+                <span class="text-xs font-bold uppercase tracking-widest text-brandCyan">
+
+                    Línea de tiempo interactiva
+
+                </span>
+
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2">
+
+                    El contexto histórico de la Sociología
+
+                </h2>
+
+                <p class="text-xs sm:text-sm text-slate-400 mt-2">
+
+                    Explora los acontecimientos que contribuyeron al surgimiento de la Sociología.
+
+                </p>
+
+            </div>
+
+
+            <!-- CONTENEDOR DE LA LÍNEA -->
+            <div class="relative px-2 sm:px-8">
+
+
+                <!-- LÍNEA HORIZONTAL PARA ESCRITORIO -->
+                <div class="hidden sm:block absolute left-[16.66%] right-[16.66%] top-8 h-1 bg-brandSlate/40 rounded-full">
+                </div>
+
+
+                <!-- LÍNEA VERTICAL PARA MÓVIL -->
+                <div class="sm:hidden absolute left-8 top-8 bottom-8 w-1 bg-brandSlate/40 rounded-full">
+                </div>
+
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 relative">
+
+
+                    <!-- ILUSTRACIÓN -->
+                    <button onclick="showTimeline('ilustracion')"
+                            id="btn-ilustracion"
+                            class="timeline-btn group text-center transition-all duration-300 active:scale-95">
+
+                        <div class="flex justify-center mb-4 relative z-10">
+
+                            <div class="timeline-dot w-16 h-16 rounded-full bg-darkBg border-4 border-brandCyan/60 flex items-center justify-center text-brandCyan text-xl shadow-lg shadow-brandCyan/10 group-hover:scale-110 group-hover:border-brandCyan transition-all duration-300">
+
+                                <i class="fa-solid fa-lightbulb"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-card bg-cardBg border border-brandSlate/40 rounded-2xl p-5 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brandCyan/60 group-hover:bg-brandBlue/10">
+
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-brandCyan">
+
+                                Siglo XVIII
+
+                            </span>
+
+                            <h3 class="text-sm font-bold text-white mt-2">
+
+                                La Ilustración
+
+                            </h3>
+
+                            <p class="text-[11px] text-slate-400 mt-2">
+
+                                Revolución del pensamiento
+
+                            </p>
+
+                        </div>
+
+                    </button>
+
+
+
+                    <!-- REVOLUCIÓN FRANCESA -->
+                    <button onclick="showTimeline('francesa')"
+                            id="btn-francesa"
+                            class="timeline-btn group text-center transition-all duration-300 active:scale-95">
+
+                        <div class="flex justify-center mb-4 relative z-10">
+
+                            <div class="timeline-dot w-16 h-16 rounded-full bg-darkBg border-4 border-brandGold/60 flex items-center justify-center text-brandGold text-xl shadow-lg shadow-brandGold/10 group-hover:scale-110 group-hover:border-brandGold transition-all duration-300">
+
+                                <i class="fa-solid fa-landmark"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-card bg-cardBg border border-brandSlate/40 rounded-2xl p-5 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brandGold/60 group-hover:bg-brandGold/5">
+
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-brandGold">
+
+                                1789
+
+                            </span>
+
+                            <h3 class="text-sm font-bold text-white mt-2">
+
+                                Revolución Francesa
+
+                            </h3>
+
+                            <p class="text-[11px] text-slate-400 mt-2">
+
+                                Transformación política
+
+                            </p>
+
+                        </div>
+
+                    </button>
+
+
+
+                    <!-- REVOLUCIÓN INDUSTRIAL -->
+                    <button onclick="showTimeline('industrial')"
+                            id="btn-industrial"
+                            class="timeline-btn group text-center transition-all duration-300 active:scale-95">
+
+                        <div class="flex justify-center mb-4 relative z-10">
+
+                            <div class="timeline-dot w-16 h-16 rounded-full bg-darkBg border-4 border-brandCyan/60 flex items-center justify-center text-brandCyan text-xl shadow-lg shadow-brandCyan/10 group-hover:scale-110 group-hover:border-brandCyan transition-all duration-300">
+
+                                <i class="fa-solid fa-industry"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-card bg-cardBg border border-brandSlate/40 rounded-2xl p-5 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brandCyan/60 group-hover:bg-brandBlue/10">
+
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-brandCyan">
+
+                                Siglos XVIII-XIX
+
+                            </span>
+
+                            <h3 class="text-sm font-bold text-white mt-2">
+
+                                Revolución Industrial
+
+                            </h3>
+
+                            <p class="text-[11px] text-slate-400 mt-2">
+
+                                Transformación económica y social
+
+                            </p>
+
+                        </div>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- INFORMACIÓN DEL ACONTECIMIENTO -->
+            <div id="timeline-content"
+                 class="mt-8 bg-darkBg border border-brandSlate/30 rounded-2xl p-6 min-h-[190px] flex items-center justify-center transition-all duration-300">
+
+                <div class="text-center">
+
+                    <i class="fa-solid fa-hand-pointer text-brandCyan text-2xl mb-3 animate-pulse"></i>
+
+                    <p class="text-sm text-slate-400">
+
+                        Selecciona un acontecimiento de la línea de tiempo para explorar su importancia.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CAMBIOS GENERADOS -->
+        <section class="mb-12">
+
+            <div class="text-center mb-7">
+
+                <span class="text-xs font-bold uppercase tracking-widest text-brandGold">
+
+                    Transformaciones sociales
+
+                </span>
+
+
+                <h2 class="text-2xl font-bold text-white mt-2">
+
+                    ¿Qué cambió en la sociedad?
+
+                </h2>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+
+                <article class="bg-cardBg border border-brandSlate/30 rounded-2xl p-5 hover:border-brandCyan/40 hover:-translate-y-1 transition-all duration-300">
+
+                    <div class="w-10 h-10 rounded-xl bg-brandBlue/20 text-brandCyan flex items-center justify-center mb-4">
+
+                        <i class="fa-solid fa-city"></i>
+
+                    </div>
+
+
+                    <h3 class="font-bold text-white mb-2">
+
+                        Urbanización
+
+                    </h3>
+
+
+                    <p class="text-xs text-slate-400 leading-relaxed">
+
+                        El crecimiento de las ciudades modificó los espacios donde las
+                        personas vivían y trabajaban, generando nuevas formas de
+                        convivencia y relaciones sociales.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="bg-cardBg border border-brandSlate/30 rounded-2xl p-5 hover:border-brandCyan/40 hover:-translate-y-1 transition-all duration-300">
+
+                    <div class="w-10 h-10 rounded-xl bg-brandGold/10 text-brandGold flex items-center justify-center mb-4">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+
+                    <h3 class="font-bold text-white mb-2">
+
+                        Nuevas relaciones sociales
+
+                    </h3>
+
+
+                    <p class="text-xs text-slate-400 leading-relaxed">
+
+                        Las transformaciones políticas y económicas modificaron las
+                        relaciones entre diferentes grupos y las formas tradicionales
+                        de organización social.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="bg-cardBg border border-brandSlate/30 rounded-2xl p-5 hover:border-brandCyan/40 hover:-translate-y-1 transition-all duration-300">
+
+                    <div class="w-10 h-10 rounded-xl bg-brandCyan/10 text-brandCyan flex items-center justify-center mb-4">
+
+                        <i class="fa-solid fa-industry"></i>
+
+                    </div>
+
+
+                    <h3 class="font-bold text-white mb-2">
+
+                        Transformación del trabajo
+
+                    </h3>
+
+
+                    <p class="text-xs text-slate-400 leading-relaxed">
+
+                        La industrialización transformó las formas de producción y
+                        trabajo, especialmente con el desarrollo de las fábricas y
+                        el crecimiento del trabajo urbano.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="bg-cardBg border border-brandSlate/30 rounded-2xl p-5 hover:border-brandCyan/40 hover:-translate-y-1 transition-all duration-300">
+
+                    <div class="w-10 h-10 rounded-xl bg-brandBlue/20 text-brandCyan flex items-center justify-center mb-4">
+
+                        <i class="fa-solid fa-arrows-rotate"></i>
+
+                    </div>
+
+
+                    <h3 class="font-bold text-white mb-2">
+
+                        Cambio social
+
+                    </h3>
+
+
+                    <p class="text-xs text-slate-400 leading-relaxed">
+
+                        Las sociedades comenzaron a experimentar cambios acelerados,
+                        creando nuevas problemáticas y haciendo necesario comprender
+                        científicamente la vida social.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- RELACIÓN CON LA SOCIOLOGÍA -->
+        <section class="mb-12">
+
+            <div class="bg-cardBg border border-brandCyan/30 rounded-3xl p-6 sm:p-8">
+
+                <div class="flex items-center gap-3 mb-5">
+
+                    <div class="w-11 h-11 rounded-xl bg-brandCyan/10 text-brandCyan flex items-center justify-center">
+
+                        <i class="fa-solid fa-people-arrows"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="text-[10px] uppercase tracking-widest font-bold text-brandCyan">
+
+                            Conexión
+
+                        </span>
+
+                        <h2 class="text-xl font-bold text-white">
+
+                            ¿Cómo se relacionan estos procesos con la Sociología?
+
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <p class="text-sm text-slate-300 leading-relaxed">
+
+                    Los cambios provocados por la Ilustración, la Revolución Francesa
+                    y la Revolución Industrial transformaron profundamente la vida
+                    social. Las nuevas formas de organización política, económica y
+                    urbana generaron problemas y preguntas sobre el funcionamiento
+                    de las sociedades.
+
+                </p>
+
+
+                <p class="text-sm text-slate-300 leading-relaxed mt-4">
+
+                    En este contexto surgió la necesidad de estudiar la sociedad de
+                    manera sistemática y científica, contribuyendo al desarrollo de
+                    la Sociología como disciplina dedicada al análisis de la vida
+                    social y sus transformaciones.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- IDEA CLAVE -->
+        <section>
+
+            <div class="border-l-4 border-brandGold bg-brandGold/5 rounded-r-2xl p-6">
+
+                <div class="flex items-center gap-3 mb-3">
+
+                    <i class="fa-solid fa-lightbulb text-brandGold text-lg"></i>
+
+                    <h2 class="font-bold text-white">
+
+                        Idea clave
+
+                    </h2>
+
+                </div>
+
+
+                <p class="text-sm text-slate-300 leading-relaxed">
+
+                    La Sociología se desarrolló en medio de grandes transformaciones
+                    de la sociedad moderna. La Ilustración aportó nuevas formas de
+                    pensamiento, la Revolución Francesa transformó el orden político
+                    y la Revolución Industrial modificó profundamente la organización
+                    económica y social.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-cardBg/60 border-t border-brandTaupe/30 py-6 text-center text-xs text-slate-400">
+        <p>
+            &copy; Sociopedia — Plataforma Educativa Interactiva.
+        </p>
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        const timelineData = {
+
+            ilustracion: {
+
+                title: 'La Ilustración (Siglo XVIII)',
+
+                icon: 'fa-lightbulb',
+
+                badge: 'Revolución del Pensamiento',
+
+                desc: 'La Ilustración impulsó el uso de la razón, el pensamiento crítico y la confianza en la ciencia para comprender la realidad. Estas nuevas formas de pensamiento contribuyeron a crear las condiciones intelectuales para estudiar científicamente los fenómenos sociales.'
+
+            },
+
+
+            francesa: {
+
+                title: 'La Revolución Francesa (1789)',
+
+                icon: 'fa-landmark',
+
+                badge: 'Revolución Política',
+
+                desc: 'La Revolución Francesa transformó el orden político y social europeo. La ruptura con el antiguo régimen generó nuevas formas de organización política y planteó preguntas sobre el orden, la estabilidad, los conflictos y los cambios dentro de la sociedad.'
+
+            },
+
+
+            industrial: {
+
+                title: 'La Revolución Industrial (Siglos XVIII-XIX)',
+
+                icon: 'fa-industry',
+
+                badge: 'Revolución Económica y Social',
+
+                desc: 'La Revolución Industrial transformó la producción mediante el desarrollo de las fábricas y provocó un importante crecimiento urbano. El éxodo rural, las nuevas condiciones laborales y el surgimiento del proletariado urbano generaron problemas sociales que hicieron necesario comprender las transformaciones de la sociedad.'
+
+            }
+
+        };
+
+
+        // TODO: Mostrar información del acontecimiento seleccionado
+        function showTimeline(key) {
+
+            const contentDiv =
+                document.getElementById('timeline-content');
+
+            const data =
+                timelineData[key];
+
+
+            // TODO: Quitar selección de los demás acontecimientos
+            document.querySelectorAll('.timeline-btn').forEach(btn => {
+
+                const tarjeta =
+                    btn.querySelector('.timeline-card');
+
+                const punto =
+                    btn.querySelector('.timeline-dot');
+
+
+                if (tarjeta) {
+
+                    tarjeta.classList.remove(
+                        'border-brandCyan/60',
+                        'bg-brandBlue/10',
+                        'border-brandGold/60',
+                        'bg-brandGold/5'
+                    );
+
+                    tarjeta.classList.add(
+                        'border-brandSlate/40',
+                        'bg-cardBg'
+                    );
+
+                }
+
+
+                if (punto) {
+
+                    punto.classList.remove(
+                        'bg-brandBlue/20',
+                        'bg-brandGold/10',
+                        'scale-110',
+                        'border-brandCyan',
+                        'border-brandGold'
+                    );
+
+                    punto.classList.add(
+                        'bg-darkBg'
+                    );
+
+                }
+
+            });
+
+
+            // TODO: Marcar el acontecimiento seleccionado
+            const activeBtn =
+                document.getElementById(`btn-${key}`);
+
+            const activeCard =
+                activeBtn.querySelector('.timeline-card');
+
+            const activeDot =
+                activeBtn.querySelector('.timeline-dot');
+
+
+            if (key === 'francesa') {
+
+                activeCard.classList.remove(
+                    'border-brandSlate/40',
+                    'bg-cardBg'
+                );
+
+                activeCard.classList.add(
+                    'border-brandGold/60',
+                    'bg-brandGold/5'
+                );
+
+                activeDot.classList.add(
+                    'border-brandGold',
+                    'scale-110'
+                );
+
+            } else {
+
+                activeCard.classList.remove(
+                    'border-brandSlate/40',
+                    'bg-cardBg'
+                );
+
+                activeCard.classList.add(
+                    'border-brandCyan/60',
+                    'bg-brandBlue/10'
+                );
+
+                activeDot.classList.add(
+                    'border-brandCyan',
+                    'scale-110'
+                );
+
+            }
+
+
+            // TODO: Mostrar el contenido seleccionado
+            contentDiv.innerHTML = `
+
+                <div class="animate-fade-in-up w-full">
+
+                    <div class="flex items-start gap-4 mb-4">
+
+                        <div class="w-12 h-12 shrink-0 rounded-xl bg-brandBlue/20 text-brandCyan flex items-center justify-center text-xl">
+
+                            <i class="fa-solid ${data.icon}"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span class="text-[10px] font-bold text-brandGold uppercase tracking-wider">
+
+                                ${data.badge}
+
+                            </span>
+
+
+                            <h3 class="font-extrabold text-white text-lg sm:text-xl mt-1">
+
+                                ${data.title}
+
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+
+                        ${data.desc}
+
+                    </p>
+
+                </div>
+
+            `;
+
+        }
+
+
+        // TODO: Abrir y cerrar el menú móvil
+        document.getElementById('mobile-btn')?.addEventListener('click', () => {
+
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+
+        });
+
+    </script>
+
+</body>
+
+</html>
