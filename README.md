@@ -4,14 +4,14 @@ Josue Alexander Díaz López
 Henrry Samael Chávez Sánchez
 Ángel Stanley Guzmán Flores
 
-###🎓 Proyecto académico
+### 🎓 Proyecto académico
 Asignatura: Sociologia General 
 Proyecto: Guía Digital Interactiva de Sociología
 Producto: Sitio web educativo interactivo
 
 ### 🌐 Sitio web
 El proyecto se encuentra publicado mediante GitHub Pages.
-Enlace: https://tamara-avalos.github.io/SocioPedia.github.io/index.html
+Enlace: [https://tamara-avalos.github.io/SocioPedia.github.io/index.html](https://tamara-avalos.github.io/SocioPedia/](https://tamara-avalos.github.io/SocioPedia/)
 Visitar SocioPedia
 
 ### 📌 Propósito del proyecto
