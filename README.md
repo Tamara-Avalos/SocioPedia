@@ -87,7 +87,7 @@ El sitio incluye un cuestionario interactivo para poner a prueba los conocimient
 ---
 
 ## 📂 Estructura del proyecto
-
+```text
 SocioPedia/
 │
 ├── index.html
@@ -110,6 +110,7 @@ SocioPedia/
 │       └── anthony-giddens.png
 │
 └── README.md
+```
 
 👥 Integrantes
 Tamara Aileen Avalos Romero
