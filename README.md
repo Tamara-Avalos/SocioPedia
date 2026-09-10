@@ -1,3 +1,25 @@
+### 👥 Integrantes
+Tamara Aileen Avalos Romero
+Josue Alexander Díaz López
+Henrry Samael Chávez Sánchez
+Ángel Stanley Guzmán Flores
+
+###🎓 Proyecto académico
+Asignatura: Sociologia General 
+Proyecto: Guía Digital Interactiva de Sociología
+Producto: Sitio web educativo interactivo
+
+### 🌐 Sitio web
+El proyecto se encuentra publicado mediante GitHub Pages.
+Enlace: https://tamara-avalos.github.io/SocioPedia.github.io/index.html
+Visitar SocioPedia
+
+### 📌 Propósito del proyecto
+SocioPedia busca presentar los fundamentos de la Sociología de una manera sencilla, organizada e interactiva, permitiendo que los estudiantes puedan consultar los contenidos de la Unidad 1 y reforzar sus conocimientos mediante recursos visuales y actividades interactivas.
+
+
+---
+
 # 📚 SocioPedia
 
 ### Guía Digital Interactiva de Sociología
@@ -111,22 +133,3 @@ SocioPedia/
 │
 └── README.md
 ```
-
-👥 Integrantes
-Tamara Aileen Avalos Romero
-Josue Alexander Díaz López
-Henrry Samael Chávez Sánchez
-Ángel Stanley Guzmán Flores
-
-🎓 Proyecto académico
-Asignatura: Sociologia General 
-Proyecto: Guía Digital Interactiva de Sociología
-Producto: Sitio web educativo interactivo
-
-🌐 Sitio web
-El proyecto se encuentra publicado mediante GitHub Pages.
-Enlace: https://tamara-avalos.github.io/SocioPedia.github.io/index.html
-Visitar SocioPedia
-
-📌 Propósito del proyecto
-SocioPedia busca presentar los fundamentos de la Sociología de una manera sencilla, organizada e interactiva, permitiendo que los estudiantes puedan consultar los contenidos de la Unidad 1 y reforzar sus conocimientos mediante recursos visuales y actividades interactivas.
