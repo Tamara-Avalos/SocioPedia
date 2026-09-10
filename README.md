@@ -11,7 +11,7 @@ Producto: Sitio web educativo interactivo
 
 ### 🌐 Sitio web
 El proyecto se encuentra publicado mediante GitHub Pages.
-Enlace: tamara-avalos.github.io/SocioPedia/
+Enlace: [https://tamara-avalos.github.io/SocioPedia/index.html]
 Visitar SocioPedia
 
 ### 📌 Propósito del proyecto
