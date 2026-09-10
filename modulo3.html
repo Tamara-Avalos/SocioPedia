@@ -74,6 +74,31 @@
 
     </script>
 
+    <style>
+
+        /* Línea vertical de la versión móvil */
+        /* top y height ahora se calculan dinámicamente en JS
+           para que la línea siempre quede exactamente entre
+           el centro del primer punto y el centro del último,
+           sin importar cuánto texto tenga cada tarjeta. */
+        .timeline-line-mobile {
+            position: absolute;
+            left: 22px;
+            width: 4px;
+            background-color: rgba(90, 95, 117, 0.4);
+            border-radius: 9999px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Los puntos quedan por encima de la línea */
+        .timeline-dot {
+            position: relative;
+            z-index: 10;
+        }
+
+    </style>
+
 </head>
 
 
@@ -102,6 +127,7 @@
             </a>
 
 
+            <!-- Navegación de escritorio -->
             <nav class="hidden lg:flex items-center space-x-1 bg-cardBg/80 p-1.5 rounded-2xl border border-brandSlate/30">
 
                 <a href="index.html"
@@ -156,6 +182,7 @@
             </nav>
 
 
+            <!-- Botón del menú móvil -->
             <button id="mobile-btn"
                     class="lg:hidden text-slate-300 text-2xl hover:text-brandCyan transition-colors">
 
@@ -336,8 +363,9 @@
             </div>
 
 
+
             <!-- CONTENEDOR DE LA LÍNEA -->
-            <div class="relative px-2 sm:px-8">
+            <div class="relative px-0 sm:px-8">
 
 
                 <!-- LÍNEA HORIZONTAL PARA ESCRITORIO -->
@@ -346,48 +374,95 @@
 
 
                 <!-- LÍNEA VERTICAL PARA MÓVIL -->
-                <div class="sm:hidden absolute left-8 top-8 bottom-8 w-1 bg-brandSlate/40 rounded-full">
+                <div class="sm:hidden timeline-line-mobile">
                 </div>
 
 
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 relative">
+                <!-- ELEMENTOS DE LA LÍNEA -->
+                <div id="timeline-track" class="relative flex flex-col gap-8 sm:grid sm:grid-cols-3 sm:gap-6">
 
 
                     <!-- ILUSTRACIÓN -->
-                    <button onclick="showTimeline('ilustracion')"
-                            id="btn-ilustracion"
-                            class="timeline-btn group text-center transition-all duration-300 active:scale-95">
+                    <button
+                        onclick="showTimeline('ilustracion')"
+                        id="btn-ilustracion"
+                        class="timeline-btn group w-full transition-all duration-300 active:scale-95"
+                    >
 
-                        <div class="flex justify-center mb-4 relative z-10">
+                        <!-- MÓVIL -->
+                        <div class="sm:hidden grid grid-cols-[48px_1fr] gap-4 items-start relative z-10">
 
-                            <div class="timeline-dot w-16 h-16 rounded-full bg-darkBg border-4 border-brandCyan/60 flex items-center justify-center text-brandCyan text-xl shadow-lg shadow-brandCyan/10 group-hover:scale-110 group-hover:border-brandCyan transition-all duration-300">
+                            <div class="flex justify-center">
 
-                                <i class="fa-solid fa-lightbulb"></i>
+                                <div class="timeline-dot mobile-dot w-12 h-12 rounded-full bg-darkBg border-4 border-brandCyan/60 flex items-center justify-center text-brandCyan text-lg shadow-lg shadow-brandCyan/10 group-hover:scale-110 group-hover:border-brandCyan transition-all duration-300">
+
+                                    <i class="fa-solid fa-lightbulb"></i>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="timeline-card bg-cardBg border border-brandSlate/40 rounded-2xl p-4 text-left transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brandCyan/60 group-hover:bg-brandBlue/10">
+
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-brandCyan">
+
+                                    Siglo XVIII
+
+                                </span>
+
+                                <h3 class="text-sm font-bold text-white mt-2">
+
+                                    La Ilustración
+
+                                </h3>
+
+                                <p class="text-[11px] text-slate-400 mt-2">
+
+                                    Revolución del pensamiento
+
+                                </p>
 
                             </div>
 
                         </div>
 
 
-                        <div class="timeline-card bg-cardBg border border-brandSlate/40 rounded-2xl p-5 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brandCyan/60 group-hover:bg-brandBlue/10">
+                        <!-- ESCRITORIO -->
+                        <div class="hidden sm:block">
 
-                            <span class="text-[10px] font-bold uppercase tracking-wider text-brandCyan">
+                            <div class="flex justify-center mb-4 relative z-10">
 
-                                Siglo XVIII
+                                <div class="timeline-dot w-16 h-16 rounded-full bg-darkBg border-4 border-brandCyan/60 flex items-center justify-center text-brandCyan text-xl shadow-lg shadow-brandCyan/10 group-hover:scale-110 group-hover:border-brandCyan transition-all duration-300">
 
-                            </span>
+                                    <i class="fa-solid fa-lightbulb"></i>
 
-                            <h3 class="text-sm font-bold text-white mt-2">
+                                </div>
 
-                                La Ilustración
+                            </div>
 
-                            </h3>
 
-                            <p class="text-[11px] text-slate-400 mt-2">
+                            <div class="timeline-card bg-cardBg border border-brandSlate/40 rounded-2xl p-5 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brandCyan/60 group-hover:bg-brandBlue/10">
 
-                                Revolución del pensamiento
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-brandCyan">
 
-                            </p>
+                                    Siglo XVIII
+
+                                </span>
+
+                                <h3 class="text-sm font-bold text-white mt-2">
+
+                                    La Ilustración
+
+                                </h3>
+
+                                <p class="text-[11px] text-slate-400 mt-2">
+
+                                    Revolución del pensamiento
+
+                                </p>
+
+                            </div>
 
                         </div>
 
@@ -396,40 +471,86 @@
 
 
                     <!-- REVOLUCIÓN FRANCESA -->
-                    <button onclick="showTimeline('francesa')"
-                            id="btn-francesa"
-                            class="timeline-btn group text-center transition-all duration-300 active:scale-95">
+                    <button
+                        onclick="showTimeline('francesa')"
+                        id="btn-francesa"
+                        class="timeline-btn group w-full transition-all duration-300 active:scale-95"
+                    >
 
-                        <div class="flex justify-center mb-4 relative z-10">
+                        <!-- MÓVIL -->
+                        <div class="sm:hidden grid grid-cols-[48px_1fr] gap-4 items-start relative z-10">
 
-                            <div class="timeline-dot w-16 h-16 rounded-full bg-darkBg border-4 border-brandGold/60 flex items-center justify-center text-brandGold text-xl shadow-lg shadow-brandGold/10 group-hover:scale-110 group-hover:border-brandGold transition-all duration-300">
+                            <div class="flex justify-center">
 
-                                <i class="fa-solid fa-landmark"></i>
+                                <div class="timeline-dot mobile-dot w-12 h-12 rounded-full bg-darkBg border-4 border-brandGold/60 flex items-center justify-center text-brandGold text-lg shadow-lg shadow-brandGold/10 group-hover:scale-110 group-hover:border-brandGold transition-all duration-300">
+
+                                    <i class="fa-solid fa-landmark"></i>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="timeline-card bg-cardBg border border-brandSlate/40 rounded-2xl p-4 text-left transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brandGold/60 group-hover:bg-brandGold/5">
+
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-brandGold">
+
+                                    1789
+
+                                </span>
+
+                                <h3 class="text-sm font-bold text-white mt-2">
+
+                                    Revolución Francesa
+
+                                </h3>
+
+                                <p class="text-[11px] text-slate-400 mt-2">
+
+                                    Transformación política
+
+                                </p>
 
                             </div>
 
                         </div>
 
 
-                        <div class="timeline-card bg-cardBg border border-brandSlate/40 rounded-2xl p-5 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brandGold/60 group-hover:bg-brandGold/5">
+                        <!-- ESCRITORIO -->
+                        <div class="hidden sm:block">
 
-                            <span class="text-[10px] font-bold uppercase tracking-wider text-brandGold">
+                            <div class="flex justify-center mb-4 relative z-10">
 
-                                1789
+                                <div class="timeline-dot w-16 h-16 rounded-full bg-darkBg border-4 border-brandGold/60 flex items-center justify-center text-brandGold text-xl shadow-lg shadow-brandGold/10 group-hover:scale-110 group-hover:border-brandGold transition-all duration-300">
 
-                            </span>
+                                    <i class="fa-solid fa-landmark"></i>
 
-                            <h3 class="text-sm font-bold text-white mt-2">
+                                </div>
 
-                                Revolución Francesa
+                            </div>
 
-                            </h3>
 
-                            <p class="text-[11px] text-slate-400 mt-2">
+                            <div class="timeline-card bg-cardBg border border-brandSlate/40 rounded-2xl p-5 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brandGold/60 group-hover:bg-brandGold/5">
 
-                                Transformación política
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-brandGold">
 
-                            </p>
+                                    1789
+
+                                </span>
+
+                                <h3 class="text-sm font-bold text-white mt-2">
+
+                                    Revolución Francesa
+
+                                </h3>
+
+                                <p class="text-[11px] text-slate-400 mt-2">
+
+                                    Transformación política
+
+                                </p>
+
+                            </div>
 
                         </div>
 
@@ -438,44 +559,91 @@
 
 
                     <!-- REVOLUCIÓN INDUSTRIAL -->
-                    <button onclick="showTimeline('industrial')"
-                            id="btn-industrial"
-                            class="timeline-btn group text-center transition-all duration-300 active:scale-95">
+                    <button
+                        onclick="showTimeline('industrial')"
+                        id="btn-industrial"
+                        class="timeline-btn group w-full transition-all duration-300 active:scale-95"
+                    >
 
-                        <div class="flex justify-center mb-4 relative z-10">
+                        <!-- MÓVIL -->
+                        <div class="sm:hidden grid grid-cols-[48px_1fr] gap-4 items-start relative z-10">
 
-                            <div class="timeline-dot w-16 h-16 rounded-full bg-darkBg border-4 border-brandCyan/60 flex items-center justify-center text-brandCyan text-xl shadow-lg shadow-brandCyan/10 group-hover:scale-110 group-hover:border-brandCyan transition-all duration-300">
+                            <div class="flex justify-center">
 
-                                <i class="fa-solid fa-industry"></i>
+                                <div class="timeline-dot mobile-dot w-12 h-12 rounded-full bg-darkBg border-4 border-brandCyan/60 flex items-center justify-center text-brandCyan text-lg shadow-lg shadow-brandCyan/10 group-hover:scale-110 group-hover:border-brandCyan transition-all duration-300">
+
+                                    <i class="fa-solid fa-industry"></i>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="timeline-card bg-cardBg border border-brandSlate/40 rounded-2xl p-4 text-left transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brandCyan/60 group-hover:bg-brandBlue/10">
+
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-brandCyan">
+
+                                    Siglos XVIII-XIX
+
+                                </span>
+
+                                <h3 class="text-sm font-bold text-white mt-2">
+
+                                    Revolución Industrial
+
+                                </h3>
+
+                                <p class="text-[11px] text-slate-400 mt-2">
+
+                                    Transformación económica y social
+
+                                </p>
 
                             </div>
 
                         </div>
 
 
-                        <div class="timeline-card bg-cardBg border border-brandSlate/40 rounded-2xl p-5 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brandCyan/60 group-hover:bg-brandBlue/10">
+                        <!-- ESCRITORIO -->
+                        <div class="hidden sm:block">
 
-                            <span class="text-[10px] font-bold uppercase tracking-wider text-brandCyan">
+                            <div class="flex justify-center mb-4 relative z-10">
 
-                                Siglos XVIII-XIX
+                                <div class="timeline-dot w-16 h-16 rounded-full bg-darkBg border-4 border-brandCyan/60 flex items-center justify-center text-brandCyan text-xl shadow-lg shadow-brandCyan/10 group-hover:scale-110 group-hover:border-brandCyan transition-all duration-300">
 
-                            </span>
+                                    <i class="fa-solid fa-industry"></i>
 
-                            <h3 class="text-sm font-bold text-white mt-2">
+                                </div>
 
-                                Revolución Industrial
+                            </div>
 
-                            </h3>
 
-                            <p class="text-[11px] text-slate-400 mt-2">
+                            <div class="timeline-card bg-cardBg border border-brandSlate/40 rounded-2xl p-5 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-brandCyan/60 group-hover:bg-brandBlue/10">
 
-                                Transformación económica y social
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-brandCyan">
 
-                            </p>
+                                    Siglos XVIII-XIX
+
+                                </span>
+
+                                <h3 class="text-sm font-bold text-white mt-2">
+
+                                    Revolución Industrial
+
+                                </h3>
+
+                                <p class="text-[11px] text-slate-400 mt-2">
+
+                                    Transformación económica y social
+
+                                </p>
+
+                            </div>
 
                         </div>
 
                     </button>
+
 
                 </div>
 
@@ -742,9 +910,11 @@
 
     <!-- FOOTER -->
     <footer class="bg-cardBg/60 border-t border-brandTaupe/30 py-6 text-center text-xs text-slate-400">
+
         <p>
             &copy; Sociopedia — Plataforma Educativa Interactiva.
         </p>
+
     </footer>
 
 
@@ -809,32 +979,32 @@
             document.querySelectorAll('.timeline-btn').forEach(btn => {
 
                 const tarjeta =
-                    btn.querySelector('.timeline-card');
+                    btn.querySelectorAll('.timeline-card');
 
                 const punto =
-                    btn.querySelector('.timeline-dot');
+                    btn.querySelectorAll('.timeline-dot');
 
 
-                if (tarjeta) {
+                tarjeta.forEach(card => {
 
-                    tarjeta.classList.remove(
+                    card.classList.remove(
                         'border-brandCyan/60',
                         'bg-brandBlue/10',
                         'border-brandGold/60',
                         'bg-brandGold/5'
                     );
 
-                    tarjeta.classList.add(
+                    card.classList.add(
                         'border-brandSlate/40',
                         'bg-cardBg'
                     );
 
-                }
+                });
 
 
-                if (punto) {
+                punto.forEach(dot => {
 
-                    punto.classList.remove(
+                    dot.classList.remove(
                         'bg-brandBlue/20',
                         'bg-brandGold/10',
                         'scale-110',
@@ -842,11 +1012,11 @@
                         'border-brandGold'
                     );
 
-                    punto.classList.add(
+                    dot.classList.add(
                         'bg-darkBg'
                     );
 
-                }
+                });
 
             });
 
@@ -855,48 +1025,63 @@
             const activeBtn =
                 document.getElementById(`btn-${key}`);
 
-            const activeCard =
-                activeBtn.querySelector('.timeline-card');
+            const activeCards =
+                activeBtn.querySelectorAll('.timeline-card');
 
-            const activeDot =
-                activeBtn.querySelector('.timeline-dot');
+            const activeDots =
+                activeBtn.querySelectorAll('.timeline-dot');
 
 
-            if (key === 'francesa') {
+            activeCards.forEach(card => {
 
-                activeCard.classList.remove(
-                    'border-brandSlate/40',
-                    'bg-cardBg'
-                );
+                if (key === 'francesa') {
 
-                activeCard.classList.add(
-                    'border-brandGold/60',
-                    'bg-brandGold/5'
-                );
+                    card.classList.remove(
+                        'border-brandSlate/40',
+                        'bg-cardBg'
+                    );
 
-                activeDot.classList.add(
-                    'border-brandGold',
-                    'scale-110'
-                );
+                    card.classList.add(
+                        'border-brandGold/60',
+                        'bg-brandGold/5'
+                    );
 
-            } else {
+                } else {
 
-                activeCard.classList.remove(
-                    'border-brandSlate/40',
-                    'bg-cardBg'
-                );
+                    card.classList.remove(
+                        'border-brandSlate/40',
+                        'bg-cardBg'
+                    );
 
-                activeCard.classList.add(
-                    'border-brandCyan/60',
-                    'bg-brandBlue/10'
-                );
+                    card.classList.add(
+                        'border-brandCyan/60',
+                        'bg-brandBlue/10'
+                    );
 
-                activeDot.classList.add(
-                    'border-brandCyan',
-                    'scale-110'
-                );
+                }
 
-            }
+            });
+
+
+            activeDots.forEach(dot => {
+
+                if (key === 'francesa') {
+
+                    dot.classList.add(
+                        'border-brandGold',
+                        'scale-110'
+                    );
+
+                } else {
+
+                    dot.classList.add(
+                        'border-brandCyan',
+                        'scale-110'
+                    );
+
+                }
+
+            });
 
 
             // TODO: Mostrar el contenido seleccionado
@@ -952,6 +1137,54 @@
             document.getElementById('mobile-menu').classList.toggle('hidden');
 
         });
+
+
+        // Ajusta la línea vertical de la línea de tiempo en móvil para que
+        // siempre quede exactamente entre el centro del primer punto y el
+        // centro del último, sin importar el largo del texto de cada tarjeta.
+        function updateMobileLine() {
+
+            const line =
+                document.querySelector('.timeline-line-mobile');
+
+            const track =
+                document.getElementById('timeline-track');
+
+            const dots =
+                document.querySelectorAll('.mobile-dot');
+
+            if (!line || !track || dots.length === 0) return;
+
+            // Si la línea no está visible (versión escritorio), no calcular
+            if (line.offsetParent === null) return;
+
+            const trackRect = track.getBoundingClientRect();
+            const firstRect = dots[0].getBoundingClientRect();
+            const lastRect = dots[dots.length - 1].getBoundingClientRect();
+
+            const firstCenter =
+                firstRect.top + firstRect.height / 2 - trackRect.top;
+
+            const lastCenter =
+                lastRect.top + lastRect.height / 2 - trackRect.top;
+
+            line.style.top = firstCenter + 'px';
+            line.style.height = (lastCenter - firstCenter) + 'px';
+
+        }
+
+        window.addEventListener('load', updateMobileLine);
+        window.addEventListener('resize', updateMobileLine);
+
+        if (window.ResizeObserver) {
+
+            const track = document.getElementById('timeline-track');
+
+            if (track) {
+                new ResizeObserver(updateMobileLine).observe(track);
+            }
+
+        }
 
     </script>
 
